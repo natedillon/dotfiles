@@ -36,10 +36,10 @@ COLOR_NONE="\[\e[0m\]"
 
 # Size PWD (http://www.debian-administration.org/article/548/Controlling_the_size_of_the_PWD_in_bash)
 function truncate_pwd {
-	if [ $HOME == $PWD ]
+	if [ "$HOME" == "$PWD" ]
 	then
 		newPWD="~"
-	elif [ $HOME ==  ${PWD:0:${#HOME}} ]
+	elif [ "$HOME" ==  "${PWD:0:${#HOME}}" ]
 	then
 		newPWD="~${PWD:${#HOME}}"
 	else
