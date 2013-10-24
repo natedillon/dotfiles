@@ -3,7 +3,7 @@
 
 # Apple default: PS1='\h:\W \u\$ '
 
-# Size PWD (http://www.debian-administration.org/article/548/Controlling_the_size_of_the_PWD_in_bash)
+# Size PWD
 function truncate_pwd {
 	if [ "$HOME" == "$PWD" ]
 	then
@@ -27,7 +27,7 @@ function truncate_pwd {
 function set_prompt() {
 	truncate_pwd
 	
-	# Virtual Env (http://engineerwithoutacause.com/show-current-virtualenv-on-bash-prompt.html)
+	# Virtual Env
 	if [[ $VIRTUAL_ENV != "" ]]
 	then
 		venv="\n${PURPLE}(${VIRTUAL_ENV##*/}) "
@@ -35,7 +35,6 @@ function set_prompt() {
 		venv=''
 	fi
 	
-	#export PS1='\n\[$(tput setaf 6)\]\h\[$(tput sgr0)\]:\[$(tput setaf 3)\]${newPWD}\n\[$(tput setaf 2)\]\u\[$(tput sgr0)\] :: '
 	export PS1="${venv}\n${CYAN}\h${WHITE}:${YELLOW}${newPWD}\n${GREEN}\u${WHITE} :: "
 }
 
