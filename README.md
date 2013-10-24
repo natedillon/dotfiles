@@ -1,6 +1,6 @@
-# .bashrc
+# .bash
 
-My personal bash files.
+My personal bash files for OS X.
 
 ## Instructions
 
