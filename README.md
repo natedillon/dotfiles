@@ -1,6 +1,6 @@
 # .bash
 
-My personal bash files for OS X.
+My personal bash files and settings for OS X.
 
 ![Screenshot](screenshot.png)
 
@@ -11,6 +11,12 @@ Clone this repository to '~/.bash' and add the following line to your '~/.bash_p
     if [ -f ~/.bash/init.sh ]; then
         source ~/.bash/init.sh
     fi
+
+## Extras
+
+### Terminal Settings
+
+I've also included my OS X Terminal app settings (mostly for my personal use). To use the settings, go to the "Settings" tab in the preferences for the Terminal app, then import the "Nate.terminal" file (located in the "extras" folder).
 
 ## Credits
 
