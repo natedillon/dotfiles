@@ -14,7 +14,9 @@ Clone this repository to '~/.bash' and add the following line to your '~/.bash_p
 
 ## Extras
 
-I've also included my OS X Terminal app settings (mostly for my personal use). To use the settings, import the "Nate.terminal" file in the Terminal app preferences, under the settings tab.
+### Terminal Settings
+
+I've also included my OS X Terminal app settings (mostly for my personal use). To use the settings, go to the "Settings" tab in the preferences for the Terminal app, then import the "Nate.terminal" file (located in the "extras" folder).
 
 ## Credits
 
