@@ -34,3 +34,4 @@ To use my Git configuration, copy the ".gitconfig" file from the "extras" folder
 
 - [Git - Git Configuration](http://git-scm.com/book/en/Customizing-Git-Git-Configuration)
 - [Atlassian Git Tutorial - The git config Command](https://www.atlassian.com/git/tutorial/git-basics#!config)
+- [GitHub Help - Using Textmate as your default editor](https://help.github.com/articles/using-textmate-as-your-default-editor)
