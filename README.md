@@ -35,3 +35,4 @@ To use my Git configuration, copy the ".gitconfig" file from the "extras" folder
 - [Git - Git Configuration](http://git-scm.com/book/en/Customizing-Git-Git-Configuration)
 - [Atlassian Git Tutorial - The git config Command](https://www.atlassian.com/git/tutorial/git-basics#!config)
 - [GitHub Help - Using Textmate as your default editor](https://help.github.com/articles/using-textmate-as-your-default-editor)
+- [TextMate Manual - Calling TextMate from Other Applications](http://manual.macromates.com/en/using_textmate_from_terminal.html)
