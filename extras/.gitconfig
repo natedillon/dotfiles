@@ -1,0 +1,7 @@
+[user]
+	name = Nate Dillon
+	email = 
+[core]
+	editor = mate -w
+[color]
+	ui = true
