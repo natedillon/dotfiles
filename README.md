@@ -28,9 +28,11 @@ To use my OS X Terminal app settings, go to the "Settings" tab in the preference
 
 ### Git Configuration
 
-To use my Git configuration, copy the ".gitconfig" file from the "extras" folder to "~/.gitconfig". Be sure to edit the file and set the name and e-mail address.
+To use my Git configuration, copy the ".gitconfig" file from the "extras" folder to "~/.gitconfig". Be sure to edit the file and set the name and e-mail address. My current Git editor-of-choice is TextMate, so you will need to have TextMate installed (with the "mate" command).
 
 #### Git Configuration Resources
 
 - [Git - Git Configuration](http://git-scm.com/book/en/Customizing-Git-Git-Configuration)
 - [Atlassian Git Tutorial - The git config Command](https://www.atlassian.com/git/tutorial/git-basics#!config)
+- [GitHub Help - Using Textmate as your default editor](https://help.github.com/articles/using-textmate-as-your-default-editor)
+- [TextMate Manual - Calling TextMate from Other Applications](http://manual.macromates.com/en/using_textmate_from_terminal.html)
