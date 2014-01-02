@@ -59,3 +59,5 @@ To use my Git configuration, copy the ".gitconfig" file from the "extras" folder
 	- [WordCamp Yes, Vagrant Rocks #wcyvr](http://jeremyfelt.com/code/2013/08/17/wordcamp-yes-vagrant-rocks-wcyvr/)
 	- [Opscode Public Cookbooks](https://github.com/opscode-cookbooks)
 	- http://docs.opscode.com/essentials_cookbook_definitions.html
+- reasearch:
+    - [roderik/dotfiles](https://github.com/roderik/dotfiles)
