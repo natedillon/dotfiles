@@ -10,6 +10,9 @@ alias c="clear"
 # cddropboxprojects
 alias cddropboxprojects="cd ~/Dropbox/Projects"
 
+# edit
+alias edit="mate"
+
 # fab
 alias fab="fab -f conf/fabfile.py"
 
