@@ -17,6 +17,7 @@ Clone this repository to '~/.bash' and add the following line to your '~/.bash_p
 Portions of this code was taken from or inspired by the following:
 
 - [fnando/bash](https://github.com/fnando/bash)
+- [jonfaustman/.bashrc](https://github.com/jonfaustman/.bashrc)
 - [Controlling the size of the $PWD in bash](http://www.debian-administration.org/article/548/Controlling_the_size_of_the_PWD_in_bash)
 - [Show current virtualenv on bash prompt](http://engineerwithoutacause.com/show-current-virtualenv-on-bash-prompt.html)
 
@@ -61,3 +62,4 @@ To use my Git configuration, copy the ".gitconfig" file from the "extras" folder
 	- http://docs.opscode.com/essentials_cookbook_definitions.html
 - reasearch:
     - [roderik/dotfiles](https://github.com/roderik/dotfiles)
+- export EDITOR='subl -w'
