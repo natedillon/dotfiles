@@ -5,6 +5,7 @@
 
 
 source $HOME/.bash/scripts/variables.sh
+source $HOME/.bash/scripts/general.sh
 source $HOME/.bash/scripts/virtualenv.sh
 source $HOME/.bash/scripts/prompt.sh
 source $HOME/.bash/scripts/alias.sh
