@@ -16,7 +16,7 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 
 source $DIR/scripts/variables.sh
-source $DIR/scripts/virtualenv.sh
+#source $DIR/scripts/virtualenv.sh
 source $DIR/scripts/prompt.sh
 source $DIR/scripts/alias.sh
 
