@@ -1,4 +1,4 @@
-# .bash
+# bash
 
 My personal bash files and settings for OS X.
 
