@@ -2,7 +2,7 @@
 # ----------------------
 
 # l
-alias l="ls -alFh"
+alias ll="ls -alFh"
 
 # c
 alias c="clear"
