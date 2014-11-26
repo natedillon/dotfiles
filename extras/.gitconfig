@@ -1,7 +1,9 @@
 [user]
 	name = Nate Dillon
-	email = 
+	email =
 [core]
-	editor = mate -w
+	editor = atom --wait
 [color]
 	ui = true
+[push]
+	default = simple
