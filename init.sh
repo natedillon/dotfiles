@@ -1,6 +1,6 @@
 # ===============================================
 # ~/.bash
-# Author: D. Nathan Dillon (nate@natedillon.com)
+# Author: D. Nathan Dillon (http://natedillon.com)
 # ===============================================
 
 
