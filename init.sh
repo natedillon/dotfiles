@@ -24,3 +24,21 @@ source $DIR/scripts/alias.sh
 # Restore old values
 SOURCE=$SOURCE_TEMP
 DIR=$DIR_TEMP
+
+
+# Switch from built-in OS X Git to dowloadable version
+if [ -f /usr/local/git/bin/git ]; then
+    export PATH="/usr/local/git/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:$PATH"
+fi
+
+# Java development settings
+if [ -d /usr/libexec/java_home ]; then
+    export JAVA_HOME=$(/usr/libexec/java_home)
+fi
+
+# Java Team VM settings
+export CLUSTER_STANDALONE=true
+
+# Use MAMP's PHP and other command line tools
+export PATH=/Applications/MAMP/bin/php/php5.6.10/bin:$PATH
+export PATH=/Applications/MAMP/Library/bin/:$PATH
