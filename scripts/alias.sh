@@ -17,4 +17,4 @@ alias edit="atom"
 alias fab="fab -f conf/fabfile.py"
 
 # hosts
-alias hosts="sudo mate /etc/hosts"
+alias hosts="sudo atom /etc/hosts"
