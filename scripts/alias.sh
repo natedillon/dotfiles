@@ -18,3 +18,6 @@ alias fab="fab -f conf/fabfile.py"
 
 # hosts
 alias hosts="sudo atom /etc/hosts"
+
+# Composer
+alias composer='php ~/composer.phar'
