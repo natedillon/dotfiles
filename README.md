@@ -6,7 +6,7 @@ My personal bash files and settings for OS X.
 
 ## Instructions
 
-Clone this repository to '~/.bash' and add the following line to your '~/.bash_profile' or equivalent file:
+Clone this repository to `~/.bash` and add the following line to your `~/.bash_profile` or equivalent file:
 
     if [ -f ~/.bash/init.sh ]; then
         source ~/.bash/init.sh
@@ -25,11 +25,11 @@ Portions of this code was taken from or inspired by the following:
 
 ### Terminal Settings
 
-To use my OS X Terminal app settings, go to the "Settings" tab in the preferences for the Terminal app, then import the "Nate.terminal" file (located in the "extras" folder).
+To use my OS X Terminal app settings, go to the “Settings” tab in the preferences for the Terminal app, then import the “Nate.terminal” file (located in the “extras” folder).
 
 ### Git Configuration
 
-To use my Git configuration, copy the ".gitconfig" file from the "extras" folder to "~/.gitconfig". Be sure to edit the file and set the name and e-mail address. My current Git editor-of-choice is TextMate, so you will need to have TextMate installed (with the "mate" command).
+To use my Git configuration, copy the `.gitconfig` file from the “extras” folder to `~/.gitconfig`. Be sure to edit the file and set the name and e-mail address. My current Git editor-of-choice is TextMate, so you will need to have TextMate installed (with the “mate” command).
 
 #### Git Configuration Resources
 
