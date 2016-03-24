@@ -25,7 +25,7 @@ Portions of this code was taken from or inspired by the following:
 
 ### Terminal Settings
 
-To use my OS X Terminal app settings, go to the “Settings” tab in the preferences for the Terminal app, then import the “Nate.terminal” file (located in the “extras” folder).
+To use my OS X Terminal app settings, go to the “Settings” tab in the preferences for the Terminal app, then import the `Nate.terminal` file (located in the “extras” folder).
 
 ### Git Configuration
 
