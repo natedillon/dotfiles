@@ -7,9 +7,6 @@ alias ll="ls -alFh"
 # c
 alias c="clear"
 
-# cddropboxprojects
-alias cddropboxprojects="cd ~/Dropbox/Projects"
-
 # edit
 alias edit="atom"
 
