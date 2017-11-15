@@ -3,6 +3,7 @@
 	email =
 [core]
 	editor = atom --wait
+	excludesfile = ~/.gitignore_global
 [color]
 	ui = true
 [push]
