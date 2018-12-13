@@ -38,7 +38,3 @@ fi
 
 # Java Team VM settings
 export CLUSTER_STANDALONE=true
-
-# Use MAMP's PHP and other command line tools
-export PATH=/Applications/MAMP/bin/php/php5.6.10/bin:$PATH
-export PATH=/Applications/MAMP/Library/bin/:$PATH
