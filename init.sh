@@ -16,6 +16,7 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 
 source $DIR/scripts/variables.sh
+#source $DIR/scripts/general.sh
 #source $DIR/scripts/virtualenv.sh
 source $DIR/scripts/prompt.sh
 source $DIR/scripts/alias.sh
@@ -24,3 +25,17 @@ source $DIR/scripts/alias.sh
 # Restore old values
 SOURCE=$SOURCE_TEMP
 DIR=$DIR_TEMP
+
+
+# Switch from built-in OS X Git to dowloadable version
+#if [ -f /usr/local/git/bin/git ]; then
+#    export PATH="/usr/local/git/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:$PATH"
+#fi
+
+# Java development settings
+if [ -d /usr/libexec/java_home ]; then
+    export JAVA_HOME=$(/usr/libexec/java_home)
+fi
+
+# Java Team VM settings
+export CLUSTER_STANDALONE=true

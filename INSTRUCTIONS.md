@@ -1,67 +1,98 @@
 # Instructions
 
-Work in progress...
+**A work in progress...**
 
-## Requirements
+Full instructions written primarily for my own benefit.
 
-- OS X 10.9 Mavericks
-- Install Xcode command line tools by typing the following command in Terminal:
+## Software
+
+Software used in my personal setup:
+
+- OS X 10.11 El Capitan
+- [iTerm](https://www.iterm2.com/) (currently using version 3)
+- [Atom](https://atom.io/) (required for some of the aliases in `alias.sh`)
+- [VirtualBox](https://www.virtualbox.org/)
+- [Vagrant](http://vagrantup.com/)
+
+## Terminal Settings
+
+## Prerequisites
+
+1. Install the Xcode command line tools:
 
         xcode-select --install
 
-- Git (use the version included with Xcode command line tools?)
-- Python (use the version included with OS X?)
-    - currently using 2.7.x included with OS X
-- TextMate
-    - required for alias.sh and .gitconfig
-- Kaleidoscope
-    - required for .gitconfig
-- Dropbox
-    - virtualenvwrapper project home is set to ~/Dropbox/Projects
-    - cddropboxprojects alias points to ~/Dropbox/Projects
+1. Install [Homebrew](http://brew.sh/):
 
-## Instructions
+        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-1. Clone the .bash repository.
-1. Set up .gitconfig.
-1. Terminal settings.
+1. Install [Git](https://git-scm.com/) (via Homebrew):
 
-## K-State
+        brew install git
 
-1. pip
+## Bash Setup
 
-        sudo easy_install pip
+1. Clone the [`bash`](https://github.com/natedillon/bash) repo:
 
-1. [virtualenv](http://virtualenv.org/)
+        git clone git@github.com:natedillon/bash.git
 
-        pip install virtualenv
+## Development Tools
 
-1. [virtualenvwrapper](http://virtualenvwrapper.readthedocs.org/)
+1. **(?)** Install Ruby:
 
-        pip install virtualenvwrapper
+        brew install ruby
 
-1. [Homebrew](http://brew.sh/)
+1. [Sass](http://sass-lang.com/):
 
-        ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+        gem install sass
 
-1. libjpeg with Homebrew
+1. [Compass](http://compass-style.org/):
 
-        brew install libjpeg
+        gem update --system; gem install compass
 
-## Personal
+1. Install [npm](https://www.npmjs.com/).
+1. Install [Grunt](http://gruntjs.com/):
 
-1. VirtualBox
-1. [Vagrant](http://vagrantup.com/)
-1. rbenv (from the Chef installation instructions)
-1. [Chef](http://getchef.com/)
+        npm install -g grunt-cli
 
-## Other
+## To-Do
 
-- Sass
-- Compass
+- Terminal settings
+- SSH keys
+- `.bash_profile`
 
-        sudo gem install compass
-		rbenv rehash
+        if [ -f ~/.bash/init.sh ]; then
+            source ~/.bash/init.sh
+        fi
 
-        sudo gem install compass --pre
-		rbenv rehash
+- `.gitconfig`
+- `.editorconfig`
+- K-State OME Python VM:
+    - `.ksu_config`
+- Atom configuration
+
+### Older To-Do List
+
+- rbenv in .bash_profile
+- Vagrant
+    - vagrant-librarian-chef
+    - vagrant-hostmanager
+    - vagrant-list
+- Chef
+    - librarian-chef
+- aliases:
+    - VBoxManage list runningvms
+	- VBoxManage controlvm <uuid> poweroff
+	- VBoxManage unregistervm <uuid>
+- documentation:
+    - [Vagrant is easy - Chef is hard.](http://adamcod.es/2013/01/15/vagrant-is-easy-chef-is-hard.html)
+    - [Vagrant is easy - Chef is hard (Part 2).](http://adamcod.es/2013/01/15/vagrant-is-easy-chef-is-hard-part2.html)
+    - [The One Thing I Wish I Knew When Starting To Use Chef](http://adamcod.es/2013/08/27/one-thing-i-wish-i-knew-opscode-chef.html)
+	- [How to create a virtual host with vagrant and chef](http://stackoverflow.com/questions/16568924/how-to-create-a-virtual-host-with-vagrant-and-chef)
+	- [How do I destroy a VM when I deleted the .vagrant file?](http://stackoverflow.com/questions/15408969/how-do-i-destroy-a-vm-when-i-deleted-the-vagrant-file)
+	- [WordCamp Yes, Vagrant Rocks #wcyvr](http://jeremyfelt.com/code/2013/08/17/wordcamp-yes-vagrant-rocks-wcyvr/)
+	- [Opscode Public Cookbooks](https://github.com/opscode-cookbooks)
+	- http://docs.opscode.com/essentials_cookbook_definitions.html
+- reasearch:
+    - [roderik/dotfiles](https://github.com/roderik/dotfiles)
+- export EDITOR='subl -w'
