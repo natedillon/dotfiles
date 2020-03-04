@@ -1,10 +1,17 @@
 [user]
-	name = Nate Dillon
+	name =
 	email =
+[credential]
+	helper = osxkeychain
 [core]
-	editor = atom --wait
 	excludesfile = ~/.gitignore_global
+	editor = atom --wait
 [color]
-	ui = true
+	ui = auto
 [push]
 	default = simple
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	clean = git-lfs clean -- %f
+	required = true
