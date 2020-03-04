@@ -1,6 +1,6 @@
 # bash
 
-My personal bash files and settings for OS X.
+My personal configuration files and scripts for macOS.
 
 ![Screenshot](screenshot.png)
 
