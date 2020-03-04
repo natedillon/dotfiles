@@ -1,5 +1,2 @@
-# System files
 .DS_Store
-
-# Text editor temporary/backup files
-*~
+Thumbs.db
