@@ -1,4 +1,4 @@
-# bash
+# dotfiles
 
 My personal configuration files and scripts for macOS.
 
