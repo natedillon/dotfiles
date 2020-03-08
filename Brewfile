@@ -5,6 +5,7 @@ tap "homebrew/core"
 brew "coda-cli"
 brew "composer"
 brew "git"
+brew "git-lfs"
 brew "mas"
 brew "node"
 brew "starship"
@@ -12,8 +13,8 @@ brew "zsh-syntax-highlighting"
 cask "coda"
 cask "hyper"
 cask "opera"
-cask "vivaldi"
 cask "spotify"
+cask "vivaldi"
 mas "Amphetamine", id: 937984704
 mas "Day One", id: 1055511498
 mas "Divvy", id: 413857545
@@ -29,6 +30,7 @@ mas "Reeder", id: 880001334
 mas "Rocket.Chat", id: 1086818840
 mas "Save to Pocket", id: 1477385213
 mas "Slack", id: 803453959
+mas "Soulver", id: 413965349
 mas "Things", id: 904280696
 mas "Tot", id: 1491071483
 mas "Tweetbot", id: 557168941
