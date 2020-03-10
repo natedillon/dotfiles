@@ -17,6 +17,7 @@ cask "opera"
 cask "spotify"
 cask "vivaldi"
 cask "xscope"
+cask "zoomus"
 mas "Amphetamine", id: 937984704
 mas "Day One", id: 1055511498
 mas "Divvy", id: 413857545
