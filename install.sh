@@ -67,7 +67,7 @@ is_valid_email () {
 }
 
 
-# Set up .gitconfig
+# .gitconfig
 # -------------------------
 
 # Get name
