@@ -7,11 +7,11 @@ info "Running K-State Java setup"
 
 # Ask to install IntelliJ
 while true; do
-  read -p "Would you like to install IntelliJ IDEA Community Edition? [Y/n]: " input
+  read -p "Would you like to install IntelliJ IDEA Community Edition? [y/n]: " input
   case $input in
     [yY][eE][sS]|[yY] ) install_intellij=true; break;;
     [nN][oO]|[nN] ) install_intellij=false; break;;
-    * ) echo "Please answer yes [Y/y] or no [N/n].";;
+    * ) echo "Please answer yes (Y/y) or no (N/n).";;
   esac
 done
 echo $install_intellij
