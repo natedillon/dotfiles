@@ -46,7 +46,8 @@ dotfiles_installer () {
   brew bundle --verbose --file="./brewfiles/Brewfile.casks"
 
   # Grunt
-  #npm install -g grunt-cli
+  info "Installing Grunt..."
+  npm install -g grunt-cli
 
   # Drush Launcher
   #curl -OL https://github.com/drush-ops/drush-launcher/releases/latest/download/drush.phar
