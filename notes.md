@@ -1,0 +1,4 @@
+- [Vagrant Berkshelf could not find the 'berks' executable in your PATH. When running 'vagrant up'](https://stackoverflow.com/questions/27991967/vagrant-berkshelf-could-not-find-the-berks-executable-in-your-path-when-runni)
+- [How can I check if a program exists from a Bash script?](https://stackoverflow.com/questions/592620/how-can-i-check-if-a-program-exists-from-a-bash-script)
+- [HowTo: Check If a Directory Exists In a Shell Script](https://www.cyberciti.biz/faq/howto-check-if-a-directory-exists-in-a-bash-shellscript/)
+- [How do I check if the Java JDK is installed on Mac?](https://stackoverflow.com/questions/14292698/how-do-i-check-if-the-java-jdk-is-installed-on-mac)
