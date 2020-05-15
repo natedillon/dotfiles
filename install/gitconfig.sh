@@ -1,55 +1,16 @@
 #!/bin/bash
 
-blue () {
-  tput setaf 4
-  echo "$*"
-  tput sgr0
-}
+source ../functions/colors.sh
+source ../functions/alerts.sh
 
-green () {
-  tput setaf 2
-  echo "$*"
-  tput sgr0
-}
-
-yellow () {
-  tput setaf 3
-  echo "$*"
-  tput sgr0
-}
-
-red () {
-  tput setaf 1
-  echo "$*"
-  tput sgr0
-}
-
-info () {
-  echo
-  blue "$@"
-}
-
-success () {
-  echo
-  green "$@"
-}
-
-warning () {
-  echo
-  yellow "$@"
-}
-
-error () {
-  echo
-  red "$@"
-}
-
+# Get an e-mail address from the user
 read_email () {
   echo
   read -p "E-mail address: " email
   validate_email
 }
 
+# Check to see if a string is empty
 is_empty () {
   if [ -z "$1" ]; then
     return 0
@@ -58,6 +19,7 @@ is_empty () {
   fi
 }
 
+# Check to see if a string is a valid e-mail address
 is_valid_email () {
   if echo $1 | grep '^[a-zA-Z0-9._%+-]*@[a-zA-Z0-9]*\.[a-zA-Z0-9]*$' >/dev/null; then
     return 0
