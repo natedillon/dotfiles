@@ -1,32 +1,57 @@
 #!/bin/bash
 
+set -eo pipefail
+
 source ./functions/colors.sh
 source ./functions/alerts.sh
 
-info "natedillon/dotfiles installer (https://github.com/natedillon/dotfiles)"
+echo
+yellow "=========================================="
+blue   "  natedillon/dotfiles"
+echo   "  https://github.com/natedillon/dotfiles"
+yellow "=========================================="
 
 dotfiles_installer () {
   # Xcode Command Line Developer Tools
+  info "Checking for Xcode Command Line Developer Tools..."
   if type xcode-select >&- && xpath=$( xcode-select --print-path ) && test -d "${xpath}" && test -x "${xpath}"; then
-    success "Xcode Command Line Developer Tools are already installed"
+    success "Xcode Command Line Developer Tools are installed"
   else
-    info "Installing Xcode Command Line Developer Tools"
+    info "Installing Xcode Command Line Developer Tools..."
+    xcode-select --install
   fi
 
   # Homebrew
+  info "Checking for Homebrew..."
   if hash brew 2>/dev/null; then
-    success "Homebrew is already installed"
+    success "Homebrew is installed"
+    info "Updating Homebrew..."
+    brew update
   else
-    info "Installing Homebrew"
+    info "Installing Homebrew..."
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
 
-  # homebrew-cask-versions
+  # Homebrew packages
+  info "Installing Homebrew packages..."
+  brew tap homebrew/bundle
+  brew bundle --verbose --file="./brewfiles/Brewfile"
 
-  # Brewfile
+  # Homebrew Mac App Store apps
+  info "Installing Mac App Store apps..."
+  brew bundle --verbose --file="./brewfiles/Brewfile.mas"
+
+  # Homebrew casks
+  info "Installing Homebrew casks..."
+  brew bundle --verbose --file="./brewfiles/Brewfile.casks"
 
   # Grunt
+  #npm install -g grunt-cli
 
   # Drush Launcher
+  #curl -OL https://github.com/drush-ops/drush-launcher/releases/latest/download/drush.phar
+  #chmod +x drush.phar
+  #sudo mv drush.phar /usr/local/bin/drush
 
   # Oh My Zsh
 
@@ -45,9 +70,10 @@ dotfiles_installer () {
   # open https://gpvpn.ksu.edu/
 }
 
+# Confirm the user would like to run the installer
+echo
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
-  # Run the installer
-  info "Forced run of the installer"
+  run_installer=true
 else
   while true; do
     read -p "This may overwrite existing files in your home directory. Are you sure? (y/n): " input
@@ -57,8 +83,10 @@ else
       * ) warning "Please answer yes (Y/y) or no (N/n).";;
     esac
   done
-  if $run_installer; then
-    # Run the installer
-    info "Running the installer"
-  fi
+fi
+
+# Run the installer
+if $run_installer; then
+  info "Running the installer..."
+  dotfiles_installer
 fi

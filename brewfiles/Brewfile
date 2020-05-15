@@ -1,0 +1,15 @@
+tap "homebrew/services"
+
+# Command line tools
+brew "git"
+brew "git-lfs"
+brew "composer"
+brew "node"
+
+# Local development server
+brew "mariadb", restart_service: true
+brew "phpmyadmin"
+
+# Command line configuration
+brew "starship"
+brew "zsh-syntax-highlighting"
