@@ -45,6 +45,10 @@ dotfiles_installer () {
   info "Installing Homebrew casks..."
   brew bundle --verbose --file="./brewfiles/Brewfile.casks"
 
+  # git-lfs
+  info "Setting up git-lfs..."
+  git lfs install
+
   # Grunt
   info "Installing Grunt..."
   npm install -g grunt-cli
@@ -63,20 +67,22 @@ dotfiles_installer () {
   fi
 
   # Oh My Zsh
-
-  # zsh-syntax-highlighting
+  #sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
   # Copy .zshrc to home directory
   #cp ./.zshrc $HOME
+  #source $HOME/.zshrc
 
   # GitHub SSH
+  #https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+  #https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account
 
   # Local development setup
   # https://ntdln.com/2018/12/20/macos-local-development-setup/
 
-  # K-State stuff
-  # GlobalProtect
-  # open https://gpvpn.ksu.edu/
+  # MariaDB
+  #info "Running MySQL setup..."
+  #sudo /usr/local/bin/mysql_secure_installation
 }
 
 # Confirm the user would like to run the installer
@@ -89,7 +95,7 @@ else
     case $input in
       [yY][eE][sS]|[yY] ) run_installer=true; break;;
       [nN][oO]|[nN] ) run_installer=false; break;;
-      * ) warning "Please answer yes (Y/y) or no (N/n).";;
+      * ) warning "Please answer yes [Y/y] or no [N/n].";;
     esac
   done
 fi
