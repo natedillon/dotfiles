@@ -98,11 +98,13 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Starship prompt
 eval "$(starship init zsh)"
 
+# zsh-syntax-highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Set project path
+# Project path
 if [ ! -d "$HOME/Projects" ]; then
   mkdir "$HOME/Projects"
 fi
@@ -113,7 +115,10 @@ if [ -d "/opt/chefdk/bin" ]; then
   export PATH=/opt/chefdk/bin:$PATH
 fi
 
-# K-State Java VM settings
+# Java
+if [ -d "/usr/libexec/java_home" ]; then
+  export JAVA_HOME=$(/usr/libexec/java_home)
+fi
 export CLUSTER_STANDALONE=true
 
 # Start/stop GlobalProtect VPN
