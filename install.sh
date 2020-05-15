@@ -49,10 +49,18 @@ dotfiles_installer () {
   info "Installing Grunt..."
   npm install -g grunt-cli
 
-  # Drush Launcher
-  #curl -OL https://github.com/drush-ops/drush-launcher/releases/latest/download/drush.phar
-  #chmod +x drush.phar
-  #sudo mv drush.phar /usr/local/bin/drush
+  # Drush launcher
+  info "Checking for Drush launcher..."
+  if hash drush 2>/dev/null; then
+    success "Drush launcher is installed"
+  else
+    info "Installing Drush launcher..."
+    cd $HOME
+    curl -OL https://github.com/drush-ops/drush-launcher/releases/latest/download/drush.phar
+    chmod +x drush.phar
+    sudo mv drush.phar /usr/local/bin/drush
+    cd -
+  fi
 
   # Oh My Zsh
 
