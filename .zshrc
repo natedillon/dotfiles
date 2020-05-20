@@ -121,6 +121,24 @@ if [ -d "/usr/libexec/java_home" ]; then
 fi
 export CLUSTER_STANDALONE=true
 
+# c
+alias c="clear"
+
+# edit
+alias edit="atom"
+
+# Apache
+alias start-apache='sudo apachectl start'
+alias stop-apache='sudo apachectl stop'
+alias restart-apache='sudo apachectl restart'
+
+# Config files
+alias config-apache="sudo atom /etc/apache2/httpd.conf"
+alias config-apache-users="sudo atom /etc/apache2/users/"
+alias config-hosts="sudo atom /etc/hosts"
+alias config-vhosts="sudo atom /private/etc/apache2/extra/httpd-vhosts.conf"
+alias config-php="sudo atom /etc/php.ini"
+
 # Start/stop GlobalProtect VPN
 alias start-vpn="launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*"
 alias stop-vpn="launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*"
