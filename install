@@ -1,7 +1,0 @@
-#!/bin/bash
-
-# .gitconfig
-# ----------------------
-
-read -p "Enter name: " name
-read -p "Enter e-mail address: " email

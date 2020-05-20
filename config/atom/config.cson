@@ -1,0 +1,9 @@
+"*":
+  core:
+    telemetryConsent: "no"
+  "exception-reporting":
+    userId: "2272223e-8b38-440a-8019-48ba34bdcb54"
+  "tree-view":
+    sortFoldersBeforeFiles: false
+  welcome:
+    showOnStartup: false
