@@ -1,3 +1,21 @@
+#### Git Configuration Resources
+
+- [Git - Git Configuration](http://git-scm.com/book/en/Customizing-Git-Git-Configuration)
+- [Atlassian Git Tutorial - The git config Command](https://www.atlassian.com/git/tutorial/git-basics#!config)
+- [GitHub Help - Using Textmate as your default editor](https://help.github.com/articles/using-textmate-as-your-default-editor)
+- [TextMate Manual - Calling TextMate from Other Applications](http://manual.macromates.com/en/using_textmate_from_terminal.html)
+
+## Credits
+
+Portions of this code was taken from or inspired by the following:
+
+- [fnando/bash](https://github.com/fnando/bash)
+- [jonfaustman/.bashrc](https://github.com/jonfaustman/.bashrc)
+- [Controlling the size of the $PWD in bash](http://www.debian-administration.org/article/548/Controlling_the_size_of_the_PWD_in_bash)
+- [Show current virtualenv on bash prompt](http://engineerwithoutacause.com/show-current-virtualenv-on-bash-prompt.html)
+
+## New
+
 - [Vagrant Berkshelf could not find the 'berks' executable in your PATH. When running 'vagrant up'](https://stackoverflow.com/questions/27991967/vagrant-berkshelf-could-not-find-the-berks-executable-in-your-path-when-runni)
 - [How can I check if a program exists from a Bash script?](https://stackoverflow.com/questions/592620/how-can-i-check-if-a-program-exists-from-a-bash-script)
 - [HowTo: Check If a Directory Exists In a Shell Script](https://www.cyberciti.biz/faq/howto-check-if-a-directory-exists-in-a-bash-shellscript/)
