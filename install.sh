@@ -2,7 +2,7 @@
 
 set -eo pipefail
 
-source ./functions.sh
+source scripts/functions.sh
 
 echo
 yellow "=========================================="
