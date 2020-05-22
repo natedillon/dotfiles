@@ -65,8 +65,13 @@ dotfiles_installer () {
   fi
 
   # Grunt
-  info "Installing Grunt..."
-  npm install -g grunt-cli
+  info "Checking for Grunt..."
+  if hash grunt -v 2>/dev/null; then
+    info "Installing Grunt..."
+    npm install -g grunt-cli
+  else
+    success "Grunt is installed"
+  fi
 
   # Drush launcher
   info "Checking for Drush launcher..."
