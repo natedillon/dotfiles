@@ -115,6 +115,8 @@ dotfiles_installer () {
       info "Making a backup of public SSH key..."
     fi
     info "Generating new SSH keys..."
+    get_email
+    ssh-keygen -t rsa -b 4096 -C $email
   fi
 
   # Copy Apache config files
@@ -140,7 +142,6 @@ dotfiles_installer () {
   #backup file
   #cp .zshrc $HOME
   #source $HOME/.zshrc
-
 }
 
 
