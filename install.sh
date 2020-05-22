@@ -51,6 +51,10 @@ dotfiles_installer () {
   info "Setting up git-lfs..."
   git lfs install
 
+  # Git config
+  # Copy base gitconfig file
+  # Run gitconfig script
+
   # Oh My Zsh
   info "Checking for Oh My Zsh..."
   if [ -d "$HOME/.oh-my-zsh" ]; then
@@ -79,12 +83,40 @@ dotfiles_installer () {
     cd -
   fi
 
-  # GitHub SSH
-  #https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
-  #https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account
-
-  # Local development setup
-  # https://ntdln.com/2018/12/20/macos-local-development-setup/
+  # SSH keys
+  info "Checking for SSH keys..."
+  private_key=$HOME/.ssh/id_rsa
+  public_key=$HOME/.ssh/id_rsa.pub
+  if [ -f "$private_key" ]; then private_key_exists=true; else private_key_exists=false; fi
+  if [ -f "$public_key" ];  then public_key_exists=true;  else public_key_exists=false;  fi
+  if $private_key_exists && $public_key_exists; then
+    success "SSH keys already exist"
+    generate_keys=false
+  elif $private_key_exists || $public_key_exists; then
+    if ! $private_key_exists; then
+      warning "Private SSH key does not exist"
+    elif ! $public_key_exists; then
+      warning "Public SSH key does not exist"
+    fi
+    while true; do
+      read -p "Would you like to generate new SSH keys? This may overwrite existing keys. [y/n]: " input
+      case $input in
+        [yY][eE][sS]|[yY] ) generate_keys=true; break;;
+        [nN][oO]|[nN] ) generate_keys=false; break;;
+        * ) warning "Please answer yes [Y/y] or no [N/n].";;
+      esac
+    done
+  else
+    generate_keys=true
+  fi
+  if $generate_keys; then
+    if $private_key_exists; then
+      info "Making a backup of private SSH key..."
+    elif $public_key_exists; then
+      info "Making a backup of public SSH key..."
+    fi
+    info "Generating new SSH keys..."
+  fi
 
   # Copy Apache config files
   #backup files
@@ -97,13 +129,13 @@ dotfiles_installer () {
   #backup file
   #cp config/php/7.4/php.ini /usr/local/etc/php/7.4
 
-  # Copy phpMyAdmin config file
-  #backup file
-  #cp config/phpmyadmin/phpmyadmin.config.inc.php /usr/local/etc
-
   # MariaDB
   #info "Running MySQL setup..."
   #sudo /usr/local/bin/mysql_secure_installation
+
+  # Copy phpMyAdmin config file
+  #backup file
+  #cp config/phpmyadmin/phpmyadmin.config.inc.php /usr/local/etc
 
   # Copy .zshrc to home directory
   #backup file
@@ -119,7 +151,7 @@ if [ "$1" == "--force" -o "$1" == "-f" ]; then
   run_installer=true
 else
   while true; do
-    read -p "This may overwrite existing files in your home directory. Are you sure? (y/n): " input
+    read -p "This may overwrite existing files in your home directory. Are you sure? [y/n]: " input
     case $input in
       [yY][eE][sS]|[yY] ) run_installer=true; break;;
       [nN][oO]|[nN] ) run_installer=false; break;;
