@@ -49,6 +49,17 @@ dotfiles_installer () {
   info "Setting up git-lfs..."
   git lfs install
 
+  # Oh My Zsh
+  info "Checking for Oh My Zsh..."
+  if [ -d "$HOME/.oh-my-zsh" ]; then
+    success "Oh My Zsh is installed"
+    info "Updating Oh My Zsh..."
+    upgrade_oh_my_zsh
+  else
+    info "Installing Oh My Zsh..."
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  fi
+
   # Grunt
   info "Installing Grunt..."
   npm install -g grunt-cli
@@ -65,9 +76,6 @@ dotfiles_installer () {
     sudo mv drush.phar /usr/local/bin/drush
     cd -
   fi
-
-  # Oh My Zsh
-  #sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
   # Copy .zshrc to home directory
   #cp .zshrc $HOME
