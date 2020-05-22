@@ -2,8 +2,7 @@
 
 set -eo pipefail
 
-source ./functions/colors.sh
-source ./functions/alerts.sh
+source ./functions.sh
 
 echo
 yellow "=========================================="

@@ -23,3 +23,19 @@ red () {
   echo "$*"
   tput sgr0
 }
+
+info () {
+  blue "$@"
+}
+
+success () {
+  green "$@"
+}
+
+warning () {
+  yellow "$@"
+}
+
+error () {
+  red "$@"
+}
