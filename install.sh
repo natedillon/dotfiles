@@ -11,7 +11,9 @@ blue   "  natedillon/dotfiles"
 echo   "  https://github.com/natedillon/dotfiles"
 yellow "=========================================="
 
+# Installer function
 dotfiles_installer () {
+
   # Xcode Command Line Developer Tools
   info "Checking for Xcode Command Line Developer Tools..."
   if type xcode-select >&- && xpath=$( xcode-select --print-path ) && test -d "${xpath}" && test -x "${xpath}"; then
@@ -93,7 +95,9 @@ dotfiles_installer () {
   # MariaDB
   #info "Running MySQL setup..."
   #sudo /usr/local/bin/mysql_secure_installation
+
 }
+
 
 # Confirm the user would like to run the installer
 echo

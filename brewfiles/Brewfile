@@ -1,14 +1,15 @@
 tap "homebrew/services"
 
-# Command line tools
+# Git
 brew "git"
 brew "git-lfs"
-brew "composer"
-brew "node"
 
-# Local development server
+# Local development
+brew "php"
+brew "composer"
 brew "mariadb", restart_service: true
 brew "phpmyadmin"
+brew "node"
 
 # Command line configuration
 brew "starship"

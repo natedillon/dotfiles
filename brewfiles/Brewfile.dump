@@ -10,6 +10,7 @@ brew "git-lfs"
 brew "mariadb", restart_service: true
 brew "mas"
 brew "node"
+brew "php"
 brew "phpmyadmin"
 brew "starship"
 brew "zsh-syntax-highlighting"
