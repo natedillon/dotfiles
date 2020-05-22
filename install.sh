@@ -70,7 +70,7 @@ dotfiles_installer () {
   #sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
   # Copy .zshrc to home directory
-  #cp ./.zshrc $HOME
+  #cp .zshrc $HOME
   #source $HOME/.zshrc
 
   # GitHub SSH
@@ -79,6 +79,8 @@ dotfiles_installer () {
 
   # Local development setup
   # https://ntdln.com/2018/12/20/macos-local-development-setup/
+  # Copy PHP config file
+  #cp config/php/7.4/php.ini /usr/local/etc/php/7.4
 
   # MariaDB
   #info "Running MySQL setup..."
