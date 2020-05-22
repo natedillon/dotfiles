@@ -58,8 +58,7 @@ dotfiles_installer () {
   info "Checking for Oh My Zsh..."
   if [ -d "$HOME/.oh-my-zsh" ]; then
     success "Oh My Zsh is installed"
-    info "Updating Oh My Zsh..."
-    upgrade_oh_my_zsh
+    env ZSH=$ZSH /bin/sh $ZSH/tools/upgrade.sh
   else
     info "Installing Oh My Zsh..."
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
