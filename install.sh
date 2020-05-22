@@ -79,22 +79,31 @@ dotfiles_installer () {
     cd -
   fi
 
-  # Copy .zshrc to home directory
-  #cp .zshrc $HOME
-  #source $HOME/.zshrc
-
   # GitHub SSH
   #https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
   #https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account
 
   # Local development setup
   # https://ntdln.com/2018/12/20/macos-local-development-setup/
+
+  # Copy Apache config file
+  #backup files
+  #cp config/apache2/httpd.conf /etc/apache2
+  #cp config/apache2/extra/httpd-userdir.conf /etc/apache2/extra
+  #cp config/apache2/users/nate.conf /etc/apache2/users
+  #sudo apachectl restart
+
   # Copy PHP config file
+  #backup file
   #cp config/php/7.4/php.ini /usr/local/etc/php/7.4
 
   # MariaDB
   #info "Running MySQL setup..."
   #sudo /usr/local/bin/mysql_secure_installation
+
+  # Copy .zshrc to home directory
+  #cp .zshrc $HOME
+  #source $HOME/.zshrc
 
 }
 
