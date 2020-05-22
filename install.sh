@@ -10,6 +10,14 @@ blue   "  natedillon/dotfiles"
 echo   "  https://github.com/natedillon/dotfiles"
 yellow "=========================================="
 
+# Create a backup directory with the current date and time
+backup_root="$HOME/.dotfiles_backup"
+backup_location="$backup_root/$(date +"%Y-%m-%d-%I-%M-%S")"
+if [ ! -d $backup_root ]; then
+  mkdir $backup_root
+fi
+mkdir $backup_location
+
 # Installer function
 dotfiles_installer () {
 
@@ -115,8 +123,10 @@ dotfiles_installer () {
   if $generate_keys; then
     if $private_key_exists; then
       info "Making a backup of private SSH key..."
+      cp $private_key $backup_location
     elif $public_key_exists; then
       info "Making a backup of public SSH key..."
+      cp $public_key $backup_location
     fi
     info "Generating new SSH keys..."
     get_email
@@ -138,14 +148,29 @@ dotfiles_installer () {
   #info "Running MySQL setup..."
   #sudo /usr/local/bin/mysql_secure_installation
 
-  # Copy phpMyAdmin config file
+  # phpMyAdmin config
   #backup file
   #cp config/phpmyadmin/phpmyadmin.config.inc.php /usr/local/etc
 
-  # Copy .zshrc to home directory
-  #backup file
-  #cp .zshrc $HOME
+  # .zshrc
+  if [ -f "$HOME/.zshrc" ]; then
+    info "Making a backup of .zshrc..."
+    cp $HOME/.zshrc $backup_location
+  fi
+  info "Adding new .zshrc to home directory..."
+  cp .zshrc $HOME
   #source $HOME/.zshrc
+
+  # Clean up empty backup directories
+  if [ ! "$(ls -A $backup_location)" ]; then
+    rmdir $backup_location
+  fi
+  if [ ! "$(ls -A $backup_root)" ]; then
+    rmdir $backup_root
+  fi
+
+  echo
+  success "Installation complete!"
 }
 
 
@@ -166,6 +191,8 @@ fi
 
 # Run the installer
 if $run_installer; then
+  echo
   info "Running the installer..."
+  echo
   dotfiles_installer
 fi
