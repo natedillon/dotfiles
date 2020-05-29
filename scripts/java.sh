@@ -40,13 +40,13 @@ else
   brew cask install vagrant
 fi
 
-# ChefDK
-info "Checking for ChefDK..."
-if brew ls --versions chefdk 2>/dev/null; then
-  success "ChefDK is installed"
 # VirtualBox
 # TODO: Check for VirtualBox and install if necessary
 
+# Chef
+info "Checking for Chef..."
+if hash chef 2>/dev/null; then
+  success "Chef is installed"
 else
   info "Installing ChefDK..."
   brew cask install chef/chef/chefdk
