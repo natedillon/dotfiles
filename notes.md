@@ -35,3 +35,5 @@ Portions of this code was taken from or inspired by the following:
 - [Pass all variables from one shell script to another?](https://stackoverflow.com/questions/9772036/pass-all-variables-from-one-shell-script-to-another)
 - [Detect if homebrew package is installed](https://stackoverflow.com/questions/20802320/detect-if-homebrew-package-is-installed)
 - [How can I check if a program exists from a Bash script?](https://stackoverflow.com/questions/592620/how-can-i-check-if-a-program-exists-from-a-bash-script)
+- [bash script to verify that brew cask is installed](https://apple.stackexchange.com/questions/210559/bash-script-to-verify-that-brew-cask-is-installed)
+- [How to get rid of “application downloaded from the internet” message when installing homebrew casks?](https://apple.stackexchange.com/questions/337320/how-to-get-rid-of-application-downloaded-from-the-internet-message-when-instal)
