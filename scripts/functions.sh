@@ -40,6 +40,17 @@ error () {
   red "$@"
 }
 
+# Get a name from the user
+get_name () {
+  while [ -z "$name" ]; do
+    echo
+    read -p "Name: " name
+    if is_empty $name; then
+      warning "Please enter a name"
+    fi
+  done
+}
+
 # Get an e-mail address from the user
 get_email () {
   valid_email=false
@@ -50,6 +61,17 @@ get_email () {
       valid_email=true
     else
       warning "Invalid e-mail address"
+    fi
+  done
+}
+
+# Get K-State eID from the user
+get_eid () {
+  while [ -z "$eid" ]; do
+    echo
+    read -p "K-State eID: " eid
+    if is_empty $eid; then
+      warning "Please enter your K-State eID"
     fi
   done
 }
