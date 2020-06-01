@@ -93,15 +93,6 @@ else
 fi
 info "To make changes to the configuration, edit the $ksu_config_location/vars.yml file"
 
-# Chef
-info "Checking for Chef..."
-if hash chef 2>/dev/null; then
-  success "Chef is installed"
-else
-  info "Installing ChefDK..."
-  brew cask install chef/chef/chefdk
-fi
-
 # python-vm
 info "Checking for the python-vm repository..."
 if [ ! -d "$HOME/Projects/kstateome" ]; then
@@ -118,5 +109,30 @@ else
   git clone git@github.com:kstateome/python-vm.git
   cd -
 fi
+
+# Chef
+info "Checking for Chef..."
+if hash chef 2>/dev/null; then
+  success "Chef is installed"
+else
+  info "Installing ChefDK..."
+  brew cask install chef/chef/chefdk
+fi
+
+# Chef configuration
+info "Running Chef configuration..."
+if [ ! -d "$HOME/.chef" ]; then
+  info "Creating .chef directory..."
+  mkdir $HOME/.chef
+else
+  success "The .chef directory directory already exists"
+fi
+info "Copying configuration files..."
+# TODO: Get project path from .zshrc?
+cp $HOME/Projects/kstateome/python-vm/roles/users/chef/* $HOME/.chef
+# TODO: Get username and home path
+sed -i '' 's+/home/vagrant/+/Users/nate/+g' $HOME/.chef/knife.rb
+# TODO: Need to check to make sure .ssh directory exists
+cp $HOME/Projects/kstateome/python-vm/roles/users/ssh/id_fabric $HOME/.ssh
 
 success "K-State Python setup complete!"
