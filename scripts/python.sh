@@ -88,6 +88,7 @@ if [ ! -f "$ksu_config_location/vars.yml" ]; then
   echo "git_email: $email" >> $ksu_config_location/vars.yml
   echo "git_name: $name" >> $ksu_config_location/vars.yml
   echo "eid: $eid" >> $ksu_config_location/vars.yml
+  echo "ansible_python_interpreter: /usr/bin/python3" >> $ksu_config_location/vars.yml
 else
   success "vars.yml already exists"
 fi
