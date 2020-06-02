@@ -114,15 +114,20 @@ else
 fi
 
 # IntelliJ IDEA Community Edition
-while true; do
-  read -p "Would you like to install IntelliJ IDEA Community Edition? [y/n]: " input
-  case $input in
-    [yY][eE][sS]|[yY] ) install_intellij=true; break;;
-    [nN][oO]|[nN] ) install_intellij=false; break;;
-    * ) echo "Please answer yes [Y/y] or no [N/n].";;
-  esac
-done
-if $install_intellij; then
-  info "Installing IntelliJ IDEA Community Edition..."
-  brew cask install intellij-idea-ce
+info "Checking for IntelliJ IDEA Community Edition..."
+if hash brew cask info intellij-idea-ce 2>/dev/null; then
+  while true; do
+    read -p "Would you like to install IntelliJ IDEA Community Edition? [y/n]: " input
+    case $input in
+      [yY][eE][sS]|[yY] ) install_intellij=true; break;;
+      [nN][oO]|[nN] ) install_intellij=false; break;;
+      * ) echo "Please answer yes [Y/y] or no [N/n].";;
+    esac
+  done
+  if $install_intellij; then
+    info "Installing IntelliJ IDEA Community Edition..."
+    brew cask install intellij-idea-ce
+  fi
+else
+  success "IntelliJ IDEA Community Edition is installed"
 fi
