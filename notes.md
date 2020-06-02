@@ -18,6 +18,7 @@ Portions of this code was taken from or inspired by the following:
 
 - [Vagrant Berkshelf could not find the 'berks' executable in your PATH. When running 'vagrant up'](https://stackoverflow.com/questions/27991967/vagrant-berkshelf-could-not-find-the-berks-executable-in-your-path-when-runni)
 - [How can I check if a program exists from a Bash script?](https://stackoverflow.com/questions/592620/how-can-i-check-if-a-program-exists-from-a-bash-script)
+- [How can I check if a command exists in a shell script? [duplicate]](https://stackoverflow.com/questions/7522712/how-can-i-check-if-a-command-exists-in-a-shell-script)
 - [HowTo: Check If a Directory Exists In a Shell Script](https://www.cyberciti.biz/faq/howto-check-if-a-directory-exists-in-a-bash-shellscript/)
 - [How do I check if the Java JDK is installed on Mac?](https://stackoverflow.com/questions/14292698/how-do-i-check-if-the-java-jdk-is-installed-on-mac)
 - [Safer bash scripts with 'set -euxo pipefail'](https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/)
@@ -37,3 +38,6 @@ Portions of this code was taken from or inspired by the following:
 - [How can I check if a program exists from a Bash script?](https://stackoverflow.com/questions/592620/how-can-i-check-if-a-program-exists-from-a-bash-script)
 - [bash script to verify that brew cask is installed](https://apple.stackexchange.com/questions/210559/bash-script-to-verify-that-brew-cask-is-installed)
 - [How to get rid of “application downloaded from the internet” message when installing homebrew casks?](https://apple.stackexchange.com/questions/337320/how-to-get-rid-of-application-downloaded-from-the-internet-message-when-instal)
+- [Checking if output of a command contains a certain string in a shell script](https://stackoverflow.com/questions/16931244/checking-if-output-of-a-command-contains-a-certain-string-in-a-shell-script)
+- [How to use sed to find and replace text in files in Linux / Unix shell](https://www.cyberciti.biz/faq/how-to-use-sed-to-find-and-replace-text-in-files-in-linux-unix-shell/)
+- [Getting Started with Terminal: What is sed and how does it work?](https://www.applegazette.com/mac/what-is-sed-and-how-does-it-work/)
