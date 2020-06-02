@@ -4,9 +4,11 @@ set -eo pipefail
 
 source ./functions.sh
 
-info "Running the K-State Python setup..."
+echo
+info "Running the K-State Python VM setup..."
 
 # Xcode Command Line Developer Tools
+echo
 info "Checking for Xcode Command Line Developer Tools..."
 if type xcode-select >&- && xpath=$( xcode-select --print-path ) && test -d "${xpath}" && test -x "${xpath}"; then
   success "Xcode Command Line Developer Tools are installed"
@@ -16,6 +18,7 @@ else
 fi
 
 # Homebrew
+echo
 info "Checking for Homebrew..."
 if hash brew 2>/dev/null; then
   success "Homebrew is installed"
@@ -31,6 +34,7 @@ fi
 
 # Python
 # TODO: This assumes a Homebrew install of Python. Instead, it should check for any install of Python 3.
+echo
 info "Checking for Homebrew Python..."
 if hash brew info python 2>/dev/null; then
   success "Homebrew Python is installed"
@@ -40,6 +44,7 @@ else
 fi
 
 # Vagrant
+echo
 info "Checking for Vagrant..."
 if hash vagrant 2>/dev/null; then
   success "Vagrant is installed"
@@ -59,6 +64,7 @@ fi
 #fi
 
 # Ansible
+echo
 info "Checking for Ansible..."
 if hash ansible 2>/dev/null; then
   success "Ansible is installed"
@@ -68,13 +74,14 @@ else
 fi
 
 # Configuration
+echo
 info "Running Python VM configuration..."
 ksu_config_location="$HOME/.ksu_config"
 if [ ! -d "$ksu_config_location" ]; then
   info "Creating .ksu_config directory..."
   mkdir $ksu_config_location
 else
-  success "The .ksu_config directory directory already exists"
+  success "The .ksu_config directory directory exists"
 fi
 code_directory="/home/vagrant/code"
 if [ ! -f "$ksu_config_location/vars.yml" ]; then
@@ -90,18 +97,19 @@ if [ ! -f "$ksu_config_location/vars.yml" ]; then
   echo "eid: $eid" >> $ksu_config_location/vars.yml
   echo "ansible_python_interpreter: /usr/bin/python3" >> $ksu_config_location/vars.yml
 else
-  success "vars.yml already exists"
+  success "The vars.yml file exists"
 fi
 info "To make changes to the configuration, edit the $ksu_config_location/vars.yml file"
 
 # python-vm
+echo
 info "Checking for the python-vm repository..."
 if [ ! -d "$HOME/Projects/kstateome" ]; then
   info "Creating kstateome directory..."
   mkdir $HOME/Projects/kstateome
 fi
 if [ -d "$HOME/Projects/kstateome/python-vm" ]; then
-  success "The python-vm repository is already cloned"
+  success "The python-vm repository is cloned"
 else
   info "Cloning the python-vm repository..."
   # TODO: Make sure $PROJECT_PATH is available
@@ -112,6 +120,7 @@ else
 fi
 
 # Chef
+echo
 info "Checking for Chef..."
 if hash chef 2>/dev/null; then
   success "Chef is installed"
@@ -121,12 +130,13 @@ else
 fi
 
 # Chef configuration
+echo
 info "Running Chef configuration..."
 if [ ! -d "$HOME/.chef" ]; then
   info "Creating .chef directory..."
   mkdir $HOME/.chef
 else
-  success "The .chef directory directory already exists"
+  success "The .chef directory directory exists"
 fi
 info "Copying configuration files..."
 # TODO: Get project path from .zshrc?
@@ -135,5 +145,7 @@ cp $HOME/Projects/kstateome/python-vm/roles/users/chef/* $HOME/.chef
 sed -i '' 's+/home/vagrant/+/Users/nate/+g' $HOME/.chef/knife.rb
 # TODO: Need to check to make sure .ssh directory exists
 cp $HOME/Projects/kstateome/python-vm/roles/users/ssh/id_fabric $HOME/.ssh
+success "Configuration files copied"
 
+echo
 success "K-State Python setup complete!"

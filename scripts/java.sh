@@ -4,7 +4,8 @@ set -eo pipefail
 
 source ./functions.sh
 
-info "Running the K-State Java setup..."
+echo
+info "Running the K-State Java VM setup..."
 
 # Options
 # TODO: Make sure $PROJECT_PATH is actually available (if .zshrc hasn't been copied yet)
@@ -12,10 +13,12 @@ java_vm_path="$PROJECT_PATH/kstateome/java-vm"
 java_vm_chef_path="$java_vm_path/chef"
 
 # Homebrew
+echo
 info "Updating Homebrew..."
 brew update
 
 # Java VM directory
+echo
 info "Checking for the Java VM directory..."
 if [ -d "$java_vm_path" ]; then
   success "The Java VM directory exists"
@@ -25,6 +28,7 @@ else
 fi
 
 # Chef directory
+echo
 info "Checking for the Chef directory..."
 if [ -d "$java_vm_chef_path" ]; then
   success "The Chef directory exists"
@@ -34,6 +38,7 @@ else
 fi
 
 # Vagrant
+echo
 info "Checking for Vagrant..."
 if hash vagrant 2>/dev/null; then
   success "Vagrant is installed"
@@ -46,6 +51,7 @@ fi
 # TODO: Check for VirtualBox and install if necessary
 
 # Chef
+echo
 info "Checking for Chef..."
 if hash chef 2>/dev/null; then
   success "Chef is installed"
@@ -55,6 +61,7 @@ else
 fi
 
 # Vagrant plugins
+echo
 info "Checking Vagrant plugins..."
 if ! vagrant plugin list | grep -q "vagrant-berkshelf"; then
   info "Installing vagrant-berkshelf..."
@@ -70,9 +77,10 @@ else
 fi
 
 # ome_chef_data
+echo
 info "Checking for the ome_chef_data repository..."
 if [ -d "$java_vm_path/ome_chef_data" ]; then
-  success "The ome_chef_data repository is already cloned"
+  success "The ome_chef_data repository is cloned"
 else
   info "Cloning the ome_chef_data repository..."
   cd $java_vm_path
@@ -81,9 +89,10 @@ else
 fi
 
 # ome_wildfly_cluster
+echo
 info "Checking for the ome_wildfly_cluster repository..."
 if [ -d "$java_vm_chef_path/ome_wildfly_cluster" ]; then
-  success "The ome_wildfly_cluster repository is already cloned"
+  success "The ome_wildfly_cluster repository is cloned"
 else
   info "Cloning the ome_wildfly_cluster repository..."
   cd $java_vm_chef_path
@@ -92,13 +101,14 @@ else
 fi
 
 # Symlinks
+echo
 info "Checking for symlinks..."
 create_symlink () {
   source=$1
   name=$2
   info "Checking for the $name symlink..."
   if [ -L "$java_vm_path/$name" ]; then
-    success "The symlink already exists"
+    success "The symlink exists"
   elif [ ! -d "$source" ]; then
     error "Repository not found. Please clone the ome_chef_data repository before creating the symlink."
   else
@@ -111,6 +121,7 @@ create_symlink $java_vm_path/ome_chef_data/environments environments
 create_symlink $java_vm_path/ome_chef_data/roles roles
 
 # Java
+echo
 info "Checking for Java..."
 if hash type "java" 2>/dev/null; then
   success "Java is installed..."
@@ -120,6 +131,7 @@ else
 fi
 
 # Maven
+echo
 info "Checking for Maven..."
 if hash mvn 2>/dev/null; then
   success "Maven is installed"
@@ -129,6 +141,7 @@ else
 fi
 
 # IntelliJ IDEA Community Edition
+echo
 info "Checking for IntelliJ IDEA Community Edition..."
 if hash brew cask info intellij-idea-ce 2>/dev/null; then
   while true; do
@@ -147,4 +160,5 @@ else
   success "IntelliJ IDEA Community Edition is installed"
 fi
 
+echo
 success "K-State Java setup complete!"
