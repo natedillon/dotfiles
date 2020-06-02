@@ -63,7 +63,9 @@ if [ -d "$java_vm_path/ome_chef_data" ]; then
   success "The ome_chef_data repository is already cloned"
 else
   info "Cloning the ome_chef_data repository..."
-  git clone git@github.com:kstateome/ome_chef_data.git $java_vm_path
+  cd $java_vm_path
+  git clone git@github.com:kstateome/ome_chef_data.git
+  cd -
 fi
 
 # ome_wildfly_cluster
@@ -72,7 +74,9 @@ if [ -d "$java_vm_chef_path/ome_wildfly_cluster" ]; then
   success "The ome_wildfly_cluster repository is already cloned"
 else
   info "Cloning the ome_wildfly_cluster repository..."
-  git clone git@github.com:kstateome/ome_wildfly_cluster.git $java_vm_chef_path
+  cd $java_vm_chef_path
+  git clone git@github.com:kstateome/ome_wildfly_cluster.git
+  cd -
 fi
 
 # Symlinks
