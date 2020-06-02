@@ -7,6 +7,7 @@ source ./functions.sh
 info "Running the K-State Java setup..."
 
 # Options
+# TODO: Make sure $PROJECT_PATH is actually available (if .zshrc hasn't been copied yet)
 java_vm_path="$PROJECT_PATH/kstateome/java-vm"
 java_vm_chef_path="$java_vm_path/chef"
 
@@ -53,6 +54,7 @@ else
 fi
 
 # Vagrant plugins
+# TODO: Check to see if plugins are already installed
 info "Installing Vagrant plugins..."
 vagrant plugin install vagrant-berkshelf
 vagrant plugin install vagrant-omnibus
