@@ -81,21 +81,21 @@ fi
 
 # Symlinks
 create_symlink () {
-  name=$1
-  source=$2
-  link=$3
+  source=$1
+  name=$2
   info "Checking for the $name symlink..."
-  if [ -L $link ]; then
+  if [ -L "$java_vm_path/$name" ]; then
     success "The symlink already exists"
-  elif [ ! -d "$path" ]; then
+  elif [ ! -d "$source" ]; then
     error "Repository not found. Please clone the ome_chef_data repository before creating the symlink."
   else
     info "Creating symlink..."
+    ln -s $source $java_vm_path/$name
   fi
 }
-create_symlink data_bags $java_vm_path/ome_chef_data/data_bags $java_vm_path/data_bags
-create_symlink environments $java_vm_path/ome_chef_data/environments $java_vm_path/environments
-create_symlink roles $java_vm_path/ome_chef_data/roles $java_vm_path/roles
+create_symlink $java_vm_path/ome_chef_data/data_bags data_bags
+create_symlink $java_vm_path/ome_chef_data/environments environments
+create_symlink $java_vm_path/ome_chef_data/roles roles
 
 # OpenJDK
 if /usr/libexec/java_home -v 2>/dev/null; then
