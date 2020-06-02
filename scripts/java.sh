@@ -112,8 +112,8 @@ create_symlink $java_vm_path/ome_chef_data/roles roles
 
 # Java
 info "Checking for Java..."
-if /usr/libexec/java_home -v 2>/dev/null; then
-  success "Java SDK is installed..."
+if hash type "java" 2>/dev/null; then
+  success "Java is installed..."
 else
   info "Installing OpenJDK..."
   brew cask install adoptopenjdk8
