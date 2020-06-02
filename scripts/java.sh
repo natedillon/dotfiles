@@ -131,3 +131,5 @@ if hash brew cask info intellij-idea-ce 2>/dev/null; then
 else
   success "IntelliJ IDEA Community Edition is installed"
 fi
+
+success "K-State Java setup complete!"
