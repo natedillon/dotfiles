@@ -25,6 +25,7 @@ else
 fi
 
 # Chef directory
+info "Checking for the Chef directory..."
 if [ -d "$java_vm_chef_path" ]; then
   success "The Chef directory exists"
 else
@@ -82,6 +83,7 @@ else
 fi
 
 # Symlinks
+info "Checking for symlinks..."
 create_symlink () {
   source=$1
   name=$2
@@ -99,7 +101,8 @@ create_symlink $java_vm_path/ome_chef_data/data_bags data_bags
 create_symlink $java_vm_path/ome_chef_data/environments environments
 create_symlink $java_vm_path/ome_chef_data/roles roles
 
-# OpenJDK
+# Java
+info "Checking for Java..."
 if /usr/libexec/java_home -v 2>/dev/null; then
   success "Java SDK is installed..."
 else
@@ -108,6 +111,7 @@ else
 fi
 
 # Maven
+info "Checking for Maven..."
 if hash mvn 2>/dev/null; then
   success "Maven is installed"
 else
