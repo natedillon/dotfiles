@@ -55,10 +55,19 @@ else
 fi
 
 # Vagrant plugins
-# TODO: Check to see if plugins are already installed
-info "Installing Vagrant plugins..."
-vagrant plugin install vagrant-berkshelf
-vagrant plugin install vagrant-omnibus
+info "Checking Vagrant plugins..."
+if ! vagrant plugin list | grep -q "vagrant-berkshelf"; then
+  info "Installing vagrant-berkshelf..."
+  vagrant plugin install vagrant-berkshelf
+else
+  success "vagrant-berkshelf is installed"
+fi
+if ! vagrant plugin list | grep -q "vagrant-omnibus"; then
+  info "Installing vagrant-omnibus..."
+  vagrant plugin install vagrant-omnibus
+else
+  success "vagrant-omnibus is installed"
+fi
 
 # ome_chef_data
 info "Checking for the ome_chef_data repository..."
