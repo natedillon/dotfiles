@@ -76,7 +76,7 @@ if [ ! -d "$ksu_config_location" ]; then
 else
   success "The .ksu_config directory directory already exists"
 fi
-code_directory="/home/vagrant/code/k-state"
+code_directory="/home/vagrant/code"
 if [ ! -f "$ksu_config_location/vars.yml" ]; then
   info "Creating vars.yml file..."
   # TODO: Name and e-mail address should be the ones used for Git/GitHub. Could these be pulled from .gitconfig?
