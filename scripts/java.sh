@@ -139,6 +139,9 @@ else
   info "Installing Maven..."
   brew install maven
 fi
+# TODO: Make a backup of .mavenrc if the file already exists
+info "Adding .mavenrc to home directory..."
+cp ../config/maven/.mavenrc $HOME
 
 # IntelliJ IDEA Community Edition
 echo

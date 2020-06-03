@@ -157,7 +157,7 @@ dotfiles_installer () {
     info "Making a backup of .zshrc..."
     cp $HOME/.zshrc $backup_location
   fi
-  info "Adding new .zshrc to home directory..."
+  info "Adding .zshrc to home directory..."
   cp .zshrc $HOME
   #source $HOME/.zshrc
 
