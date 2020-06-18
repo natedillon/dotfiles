@@ -94,7 +94,13 @@ dotfiles_installer () {
   netlify --telemetry-disable
 
   # Bundler
-  #sudo gem install bundler
+  info "Checking for Bundler..."
+  if hash type netlify 2>/dev/null; then
+    success "Bundler is installed"
+  else
+    info "Installing Bundler..."
+    sudo gem install bundler
+  fi
 
   # Drush launcher
   info "Checking for Drush launcher..."
