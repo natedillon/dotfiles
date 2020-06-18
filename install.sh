@@ -81,6 +81,15 @@ dotfiles_installer () {
     success "Grunt is installed"
   fi
 
+  # Netlify CLI
+  #npm install -g netlify-cli
+  #netlify login
+  # opt out of sharing usage data
+  #netlify --telemetry-disable
+
+  # Bundler
+  #sudo gem install bundler
+
   # Drush launcher
   info "Checking for Drush launcher..."
   if hash drush 2>/dev/null; then
