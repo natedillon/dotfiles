@@ -82,10 +82,16 @@ dotfiles_installer () {
   fi
 
   # Netlify CLI
-  #npm install -g netlify-cli
-  #netlify login
+  info "Checking for Netlify CLI..."
+  if hash type netlify 2>/dev/null; then
+    success "Netlify CLI is installed"
+  else
+    info "Installing Netlify CLI..."
+    npm install -g netlify-cli
+    netlify login
+  fi
   # opt out of sharing usage data
-  #netlify --telemetry-disable
+  netlify --telemetry-disable
 
   # Bundler
   #sudo gem install bundler
