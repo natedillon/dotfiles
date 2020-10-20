@@ -22,7 +22,7 @@ Basic usage:
 youtube-dl [URL]
 ```
 
-If default command doesn’t work for 1080p, make sure ffmpeg is installed and run this command:
+If default command doesn’t work for 1080p, make sure [ffmpeg](https://ffmpeg.org/) is installed and run this command:
 
 ```
 youtube-dl -f 'bestvideo+bestaudio/best' [URL]
