@@ -15,3 +15,6 @@ brew "python"
 # Command line configuration
 brew "starship"
 brew "zsh-syntax-highlighting"
+
+# Misc.
+brew "youtube-dl"
