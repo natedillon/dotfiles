@@ -9,6 +9,7 @@ brew "coda-cli"
 brew "composer"
 brew "git"
 brew "git-lfs"
+brew "python@3.8"
 brew "mariadb", restart_service: true
 brew "mas"
 brew "maven"
@@ -16,9 +17,11 @@ brew "node"
 brew "php"
 brew "phpmyadmin"
 brew "starship"
+brew "youtube-dl"
 brew "zsh-syntax-highlighting"
 cask "1password"
 cask "adoptopenjdk8"
+cask "airfoil"
 cask "alfred"
 cask "chefdk"
 cask "coda"
@@ -29,20 +32,29 @@ cask "github"
 cask "gog-galaxy"
 cask "hand-mirror"
 cask "hyper"
+cask "imageoptim"
 cask "intellij-idea-ce"
 cask "logitech-control-center"
+cask "microsoft-auto-update"
+cask "microsoft-edge"
+cask "microsoft-edge-dev"
 cask "microsoft-teams"
+cask "nova"
 cask "obs"
 cask "opera"
+cask "opera-developer"
 cask "private-internet-access"
 cask "scroll-reverser"
 cask "sequel-pro"
 cask "spotify"
 cask "thingsmacsandboxhelper"
+cask "tower"
 cask "transmit"
+cask "twitch"
 cask "vagrant"
 cask "virtualbox"
 cask "vivaldi"
+cask "vlc"
 cask "vnc-viewer"
 cask "webex-meetings"
 cask "xscope"
@@ -55,11 +67,11 @@ mas "Ghostery Lite", id: 1436953057
 mas "Grammarly for Safari", id: 1462114288
 mas "iA Writer", id: 775737590
 mas "Keynote", id: 409183694
+mas "Marked 2", id: 890031187
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Pocket", id: 568494494
-mas "Reeder", id: 880001334
-mas "Rocket.Chat", id: 1086818840
+mas "Reeder", id: 1449412482
 mas "Save to Pocket", id: 1477385213
 mas "Slack", id: 803453959
 mas "Soulver", id: 413965349
