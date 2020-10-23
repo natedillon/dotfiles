@@ -285,9 +285,19 @@ dotfiles_installer () {
   #sudo /usr/local/bin/mysql_secure_installation
 
 
-  # phpMyAdmin config
-  #backup file
-  #cp config/phpmyadmin/phpmyadmin.config.inc.php /usr/local/etc
+  # phpMyAdmin
+  # -------------------------
+
+  info "Setting up phpMyAdmin..."
+
+  # Backup existing files
+  if [ -f "/usr/local/etc/phpmyadmin.config.inc.php" ]; then
+    info "Making a backup of the existing phpmyadmin.config.inc.php file..."
+    cp /usr/local/etc/phpmyadmin.config.inc.php $backup_location
+  fi
+
+  # Copy PHP config file
+  cp config/phpmyadmin/phpmyadmin.config.inc.php /usr/local/etc
 
 
   # .zshrc
