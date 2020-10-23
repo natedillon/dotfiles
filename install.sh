@@ -55,15 +55,15 @@ dotfiles_installer () {
   # Homebrew packages
   info "Installing Homebrew packages..."
   brew tap homebrew/bundle
-  brew bundle --verbose --file="./brewfiles/Brewfile"
+  brew bundle --verbose --no-lock --file="./brewfiles/Brewfile"
 
   # Homebrew Mac App Store apps
   info "Installing Mac App Store apps..."
-  brew bundle --verbose --file="./brewfiles/Brewfile.mas"
+  brew bundle --verbose --no-lock --file="./brewfiles/Brewfile.mas"
 
   # Homebrew casks
   info "Installing Homebrew casks..."
-  brew bundle --verbose --file="./brewfiles/Brewfile.casks"
+  brew bundle --verbose --no-lock --file="./brewfiles/Brewfile.casks"
 
 
   # Git
