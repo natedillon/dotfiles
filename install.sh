@@ -279,10 +279,12 @@ dotfiles_installer () {
   cp config/php/7.4/php.ini /usr/local/etc/php/7.4
 
 
+  # MariaDB (MySQL)
+  # -------------------------
 
-  # MariaDB
-  #info "Running MySQL setup..."
-  #sudo /usr/local/bin/mysql_secure_installation
+  info "Setting up MariaDB..."
+  mysql_install_db
+  mariadb-secure-installation
 
 
   # phpMyAdmin
