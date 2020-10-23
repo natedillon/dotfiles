@@ -4,7 +4,9 @@ Nate Dillon’s dotfiles for macOS.
 
 ## Installation
 
-### Xcode Command Line Tools Installation
+### Prerequisites
+
+#### Xcode Command Line Tools Installation
 
 For a fresh installation of macOS, run the following commands (if you already have Git installed you can skip this step).
 
@@ -14,6 +16,10 @@ xcode-select --install
 ```
 
 **Note:** The `xcode-select --install` command appears to not work at the moment, giving an error saying the software is not currently available from the Software Update server. Unfortunately, the only fix I’ve found is to download the command line tools directly from the [Apple developer website](https://developer.apple.com/download/more/?=command%20line%20tools), which requires a login.
+
+#### Apple Account
+
+You will need to sign in to your Apple account before running the installer to prevent the App Store software installation from failing.
 
 ### dotfiles Installation
 
