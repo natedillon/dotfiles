@@ -143,7 +143,7 @@ dotfiles_installer () {
     env ZSH=$ZSH /bin/sh $ZSH/tools/upgrade.sh
   else
     info "Installing Oh My Zsh..."
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    0>/dev/null sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   fi
 
 
