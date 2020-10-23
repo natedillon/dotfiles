@@ -4,7 +4,7 @@ Nate Dillon’s dotfiles for macOS.
 
 ## Installation
 
-For a fresh installation of macOS, run the following commands (if you already have git installed you can skip this step).
+For a fresh installation of macOS, run the following commands (if you already have Git installed you can skip this step).
 
 ```
 sudo softwareupdate -i -a
