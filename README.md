@@ -25,7 +25,9 @@ cd dotfiles
 ./install.sh
 ```
 
-## Homebrew Bundle
+## Usage
+
+### Homebrew Bundle
 
 > Bundler for non-Ruby dependencies from Homebrew, Homebrew Cask, Mac App Store and Whalebrew.
 
@@ -37,7 +39,7 @@ brew bundle dump -f --file brewfiles/Brewfile.dump
 
 More information can be found in the [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle) GitHub repo.
 
-## youtube-dl
+### youtube-dl
 
 > youtube-dl is a command-line program to download videos from YouTube.com and a few more sites.
 
@@ -64,5 +66,6 @@ For 4K video, you need to add `--prefer-avconv`:
 ```
 youtube-dl [URL] --prefer-avconv
 ```
+
 
 More information can be found on the [youtube-dl](https://ytdl-org.github.io/youtube-dl/) website.
