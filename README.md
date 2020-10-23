@@ -4,12 +4,18 @@ Nate Dillon’s dotfiles for macOS.
 
 ## Installation
 
+### Xcode Command Line Tools Installation
+
 For a fresh installation of macOS, run the following commands (if you already have Git installed you can skip this step).
 
 ```
 sudo softwareupdate -i -a
 xcode-select --install
 ```
+
+**Note:** The `xcode-select --install` command appears to not work at the moment, giving an error saying the software is not currently available from the Software Update server. Unfortunately, the only fix I’ve found is to download the command line tools directly from the [Apple developer website](https://developer.apple.com/download/more/?=command%20line%20tools), which requires a login.
+
+### dotfiles Installation
 
 Clone this repository to the directory of your choice (I like to keep it in `~/Projects/natedillon/dotfiles`, with `~/dotfiles` as a symlink), then run the `install.sh` script.
 
