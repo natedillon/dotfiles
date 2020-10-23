@@ -334,7 +334,8 @@ dotfiles_installer () {
   fi
 
   echo
-  success "Installation complete!"
+  success "dotfiles installation complete!"
+  echo
 }
 
 
