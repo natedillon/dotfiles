@@ -97,12 +97,16 @@ dotfiles_installer () {
           * ) warning "Please answer yes [Y/y] or no [N/n].";;
         esac
       done
+      echo "test 1"
     else
+      echo "test 2"
       run_gitconfig=true
     fi
   else
+    echo "test 3"
     run_gitconfig=true
   fi
+  echo "test 4"
 
   # Copy the .gitconfig file
   if [ -f "$HOME/.gitconfig" ]; then
