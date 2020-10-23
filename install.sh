@@ -74,8 +74,55 @@ dotfiles_installer () {
   git lfs install
 
   # Git config
-  # Copy base gitconfig file
-  # Run gitconfig script
+  info "Setting up .gitconfig..."
+  if [ -f "$HOME/.gitconfig" ]; then
+    echo
+    warning "A .gitconfig file already exists"
+    echo
+    echo "Name:"
+    gitconfig_name=$(git config user.name)
+    echo $gitconfig_name
+    echo
+    echo "E-mail:"
+    gitconfig_email=$(git config user.email)
+    echo $gitconfig_email
+    echo
+    while true; do
+      read -p "Are these values correct? [y/n]: " input
+      case $input in
+        [yY][eE][sS]|[yY] ) run_gitconfig=false; break;;
+        [nN][oO]|[nN] ) run_gitconfig=true; break;;
+        * ) warning "Please answer yes [Y/y] or no [N/n].";;
+      esac
+    done
+  else
+    run_gitconfig=true
+  fi
+
+  # Copy the .gitconfig file
+  if [ -f "$HOME/.gitconfig" ]; then
+    echo
+    info "Making a backup of .gitconfig..."
+    cp $HOME/.gitconfig $backup_location
+  fi
+  cp config/git/.gitconfig $HOME
+
+  # Set name and e-mail
+  if $run_gitconfig; then
+    echo
+    info "Running the gitconfig script..."
+  else
+    git config --global user.name "$gitconfig_name"
+    git config --global user.email "$gitconfig_email"
+  fi
+
+  # Copy the .gitignore_global
+  if [ -f "$HOME/.gitignore_global" ]; then
+    echo
+    info "Making a backup of .gitignore_global..."
+    cp $HOME/.gitignore_global $backup_location
+  fi
+  cp config/git/.gitignore_global $HOME
 
 
   # Oh My Zsh
