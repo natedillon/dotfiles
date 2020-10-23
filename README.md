@@ -20,7 +20,7 @@ xcode-select --install
 Clone this repository to the directory of your choice (I like to keep it in `~/Projects/natedillon/dotfiles`, with `~/dotfiles` as a symlink), then run the `install.sh` script.
 
 ```
-git clone git@github.com:natedillon/dotfiles.git
+git clone git://github.com/natedillon/dotfiles.git
 cd dotfiles
 ./install.sh
 ```
