@@ -168,7 +168,6 @@ dotfiles_installer () {
   else
     info "Installing Netlify CLI..."
     npm install -g netlify-cli
-    netlify login
   fi
 
   # opt out of sharing usage data
