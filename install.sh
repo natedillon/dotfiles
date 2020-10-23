@@ -81,7 +81,7 @@ dotfiles_installer () {
     warning "A .gitconfig file already exists"
     gitconfig_name=$(git config user.name)
     gitconfig_email=$(git config user.email)
-    if $gitconfig_name && $gitconfig_email; then
+    if [ ! -z "$gitconfig_name" ] && [ ! -z "$gitconfig_email" ]; then
       echo
       echo "Name:"
       echo $gitconfig_name
