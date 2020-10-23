@@ -265,9 +265,9 @@ dotfiles_installer () {
   fi
 
   # Copy Apache config files
-  cp config/apache2/httpd.conf /etc/apache2
-  cp config/apache2/extra/httpd-userdir.conf /etc/apache2/extra
-  cp config/apache2/users/nate.conf /etc/apache2/users
+  sudo cp config/apache2/httpd.conf /etc/apache2
+  sudo cp config/apache2/extra/httpd-userdir.conf /etc/apache2/extra
+  sudo cp config/apache2/users/nate.conf /etc/apache2/users
 
   # Restart Apache
   sudo apachectl restart
@@ -285,7 +285,7 @@ dotfiles_installer () {
   fi
 
   # Copy PHP config file
-  cp config/php/7.4/php.ini /usr/local/etc/php/7.4
+  sudo cp config/php/7.4/php.ini /usr/local/etc/php/7.4
 
 
   # MariaDB (MySQL)
@@ -308,7 +308,7 @@ dotfiles_installer () {
   fi
 
   # Copy PHP config file
-  cp config/phpmyadmin/phpmyadmin.config.inc.php /usr/local/etc
+  sudo cp config/phpmyadmin/phpmyadmin.config.inc.php /usr/local/etc
 
 
   # .zshrc
