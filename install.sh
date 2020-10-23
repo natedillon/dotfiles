@@ -59,6 +59,7 @@ dotfiles_installer () {
 
   # Homebrew Mac App Store apps
   info "Installing Mac App Store apps..."
+  brew install mas
   brew bundle --verbose --no-lock --file="./brewfiles/Brewfile.mas"
 
   # Homebrew casks
