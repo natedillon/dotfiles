@@ -239,16 +239,20 @@ dotfiles_installer () {
   # Apache
   # -------------------------
 
+  info "Setting up Apache..."
+
   # Backup existing files
-  info "Making a backup of the existing Apache config files..."
   if [ -f "/etc/apache2/httpd.conf" ]; then
+    info "Making a backup of the existing httpd.conf..."
     cp /etc/apache2/httpd.conf $backup_location
   fi
   if [ -f "/etc/apache2/extra/httpd-userdir.conf" ]; then
+    info "Making a backup of the existing httpd-userdir.conf..."
     cp /etc/apache2/extra/httpd-userdir.conf $backup_location
   fi
   if [ -f "/etc/apache2/users/nate.conf" ]; then
-    cp /etc/apache2/httpd.conf $backup_location
+    info "Making a backup of the existing nate.conf..."
+    cp /etc/apache2/users/nate.conf $backup_location
   fi
 
   # Copy Apache config files
