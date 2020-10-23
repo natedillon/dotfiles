@@ -226,7 +226,8 @@ dotfiles_installer () {
     if $private_key_exists; then
       info "Making a backup of private SSH key..."
       cp $private_key $backup_location
-    elif $public_key_exists; then
+    fi
+    if $public_key_exists; then
       info "Making a backup of public SSH key..."
       cp $public_key $backup_location
     fi
