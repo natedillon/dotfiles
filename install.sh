@@ -293,7 +293,7 @@ dotfiles_installer () {
 
   info "Setting up MariaDB..."
   mysql_install_db
-  mariadb-secure-installation
+  sudo mariadb-secure-installation
 
 
   # phpMyAdmin
