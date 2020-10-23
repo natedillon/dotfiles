@@ -1,5 +1,7 @@
+tap "chef/chef"
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-drivers"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
@@ -7,34 +9,71 @@ brew "coda-cli"
 brew "composer"
 brew "git"
 brew "git-lfs"
+brew "python@3.8"
 brew "mariadb", restart_service: true
 brew "mas"
+brew "maven"
 brew "node"
 brew "php"
 brew "phpmyadmin"
-brew "python"
 brew "starship"
+brew "youtube-dl"
 brew "zsh-syntax-highlighting"
 cask "1password"
+cask "adobe-creative-cloud"
+cask "adoptopenjdk8"
+cask "airfoil"
 cask "alfred"
+cask "appzapper"
+cask "atom"
+cask "bartender"
+cask "brave-browser"
+cask "chefdk"
+cask "choosy"
 cask "coda"
 cask "discord"
+cask "divvy"
 cask "dropbox"
+cask "epic-games"
+cask "firefox"
 cask "firefox-developer-edition"
+cask "fliqlo"
+cask "gfxcardstatus"
 cask "github"
+cask "gog-galaxy"
 cask "hand-mirror"
 cask "hyper"
+cask "imageoptim"
+cask "intellij-idea-ce"
+cask "iterm2"
+cask "itsycal"
+cask "logitech-control-center"
+cask "microsoft-auto-update"
+cask "microsoft-edge"
+cask "microsoft-edge-dev"
 cask "microsoft-teams"
+cask "nova"
+cask "obs"
 cask "opera"
+cask "opera-developer"
 cask "private-internet-access"
+cask "quitter"
+cask "scroll-reverser"
 cask "sequel-pro"
+cask "sketch"
 cask "spotify"
+cask "steam"
 cask "thingsmacsandboxhelper"
+cask "tower"
 cask "transmit"
+cask "twitch"
 cask "vagrant"
 cask "virtualbox"
+cask "visual-studio-code"
 cask "vivaldi"
+cask "vlc"
 cask "vnc-viewer"
+cask "webex-meetings"
 cask "xscope"
 cask "zoomus"
 mas "Amphetamine", id: 937984704
@@ -45,14 +84,15 @@ mas "Ghostery Lite", id: 1436953057
 mas "Grammarly for Safari", id: 1462114288
 mas "iA Writer", id: 775737590
 mas "Keynote", id: 409183694
+mas "Marked 2", id: 890031187
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Pocket", id: 568494494
-mas "Reeder", id: 880001334
-mas "Rocket.Chat", id: 1086818840
+mas "Reeder", id: 1449412482
 mas "Save to Pocket", id: 1477385213
 mas "Slack", id: 803453959
 mas "Soulver", id: 413965349
 mas "Things", id: 904280696
 mas "Tot", id: 1491071483
+mas "Trello", id: 1278508951
 mas "Tweetbot", id: 557168941

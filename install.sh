@@ -10,7 +10,10 @@ blue   "  natedillon/dotfiles"
 echo   "  https://github.com/natedillon/dotfiles"
 yellow "=========================================="
 
+
 # Create a backup directory with the current date and time
+# -------------------------
+
 backup_root="$HOME/.dotfiles_backup"
 backup_location="$backup_root/$(date +"%Y-%m-%d-%I-%M-%S")"
 if [ ! -d $backup_root ]; then
@@ -18,10 +21,14 @@ if [ ! -d $backup_root ]; then
 fi
 mkdir $backup_location
 
+
 # Installer function
 dotfiles_installer () {
 
+
   # Xcode Command Line Developer Tools
+  # -------------------------
+
   info "Checking for Xcode Command Line Developer Tools..."
   if type xcode-select >&- && xpath=$( xcode-select --print-path ) && test -d "${xpath}" && test -x "${xpath}"; then
     success "Xcode Command Line Developer Tools are installed"
@@ -30,7 +37,11 @@ dotfiles_installer () {
     xcode-select --install
   fi
 
+
   # Homebrew
+  # -------------------------
+
+  # Install Homebrew
   info "Checking for Homebrew..."
   if hash brew 2>/dev/null; then
     success "Homebrew is installed"
@@ -54,15 +65,69 @@ dotfiles_installer () {
   info "Installing Homebrew casks..."
   brew bundle --verbose --file="./brewfiles/Brewfile.casks"
 
+
+  # Git
+  # -------------------------
+
   # git-lfs
   info "Setting up git-lfs..."
   git lfs install
 
   # Git config
-  # Copy base gitconfig file
-  # Run gitconfig script
+  info "Setting up .gitconfig..."
+  if [ -f "$HOME/.gitconfig" ]; then
+    echo
+    warning "A .gitconfig file already exists"
+    echo
+    echo "Name:"
+    gitconfig_name=$(git config user.name)
+    echo $gitconfig_name
+    echo
+    echo "E-mail:"
+    gitconfig_email=$(git config user.email)
+    echo $gitconfig_email
+    echo
+    while true; do
+      read -p "Are these values correct? [y/n]: " input
+      case $input in
+        [yY][eE][sS]|[yY] ) run_gitconfig=false; break;;
+        [nN][oO]|[nN] ) run_gitconfig=true; break;;
+        * ) warning "Please answer yes [Y/y] or no [N/n].";;
+      esac
+    done
+  else
+    run_gitconfig=true
+  fi
+
+  # Copy the .gitconfig file
+  if [ -f "$HOME/.gitconfig" ]; then
+    echo
+    info "Making a backup of .gitconfig..."
+    cp $HOME/.gitconfig $backup_location
+  fi
+  cp config/git/.gitconfig $HOME
+
+  # Set name and e-mail
+  if $run_gitconfig; then
+    echo
+    info "Running the gitconfig script..."
+  else
+    git config --global user.name "$gitconfig_name"
+    git config --global user.email "$gitconfig_email"
+  fi
+
+  # Copy the .gitignore_global
+  if [ -f "$HOME/.gitignore_global" ]; then
+    echo
+    info "Making a backup of .gitignore_global..."
+    cp $HOME/.gitignore_global $backup_location
+  fi
+  cp config/git/.gitignore_global $HOME
+
 
   # Oh My Zsh
+  # -------------------------
+
   info "Checking for Oh My Zsh..."
   if [ -d "$HOME/.oh-my-zsh" ]; then
     success "Oh My Zsh is installed"
@@ -72,7 +137,10 @@ dotfiles_installer () {
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   fi
 
+
   # Grunt
+  # -------------------------
+
   info "Checking for Grunt..."
   if hash grunt -v 2>/dev/null; then
     info "Installing Grunt..."
@@ -81,7 +149,38 @@ dotfiles_installer () {
     success "Grunt is installed"
   fi
 
+
+  # Netlify CLI
+  # -------------------------
+
+  info "Checking for Netlify CLI..."
+  if hash type netlify 2>/dev/null; then
+    success "Netlify CLI is installed"
+  else
+    info "Installing Netlify CLI..."
+    npm install -g netlify-cli
+    netlify login
+  fi
+
+  # opt out of sharing usage data
+  netlify --telemetry-disable
+
+
+  # Bundler
+  # -------------------------
+
+  info "Checking for Bundler..."
+  if hash type netlify 2>/dev/null; then
+    success "Bundler is installed"
+  else
+    info "Installing Bundler..."
+    sudo gem install bundler
+  fi
+
+
   # Drush launcher
+  # -------------------------
+
   info "Checking for Drush launcher..."
   if hash drush 2>/dev/null; then
     success "Drush launcher is installed"
@@ -94,7 +193,10 @@ dotfiles_installer () {
     cd -
   fi
 
+
   # SSH keys
+  # -------------------------
+
   info "Checking for SSH keys..."
   private_key=$HOME/.ssh/id_rsa
   public_key=$HOME/.ssh/id_rsa.pub
@@ -124,7 +226,8 @@ dotfiles_installer () {
     if $private_key_exists; then
       info "Making a backup of private SSH key..."
       cp $private_key $backup_location
-    elif $public_key_exists; then
+    fi
+    if $public_key_exists; then
       info "Making a backup of public SSH key..."
       cp $public_key $backup_location
     fi
@@ -133,26 +236,76 @@ dotfiles_installer () {
     ssh-keygen -t rsa -b 4096 -C $email
   fi
 
+
+  # Apache
+  # -------------------------
+
+  info "Setting up Apache..."
+
+  # Backup existing files
+  if [ -f "/etc/apache2/httpd.conf" ]; then
+    info "Making a backup of the existing httpd.conf..."
+    cp /etc/apache2/httpd.conf $backup_location
+  fi
+  if [ -f "/etc/apache2/extra/httpd-userdir.conf" ]; then
+    info "Making a backup of the existing httpd-userdir.conf..."
+    cp /etc/apache2/extra/httpd-userdir.conf $backup_location
+  fi
+  if [ -f "/etc/apache2/users/nate.conf" ]; then
+    info "Making a backup of the existing nate.conf..."
+    cp /etc/apache2/users/nate.conf $backup_location
+  fi
+
   # Copy Apache config files
-  #backup files
-  #cp config/apache2/httpd.conf /etc/apache2
-  #cp config/apache2/extra/httpd-userdir.conf /etc/apache2/extra
-  #cp config/apache2/users/nate.conf /etc/apache2/users
-  #sudo apachectl restart
+  cp config/apache2/httpd.conf /etc/apache2
+  cp config/apache2/extra/httpd-userdir.conf /etc/apache2/extra
+  cp config/apache2/users/nate.conf /etc/apache2/users
+
+  # Restart Apache
+  sudo apachectl restart
+
+
+  # PHP
+  # -------------------------
+
+  info "Setting up PHP..."
+
+  # Backup existing files
+  if [ -f "/usr/local/etc/php/7.4/php.ini" ]; then
+    info "Making a backup of the existing php.ini file..."
+    cp /usr/local/etc/php/7.4/php.ini $backup_location
+  fi
 
   # Copy PHP config file
-  #backup file
-  #cp config/php/7.4/php.ini /usr/local/etc/php/7.4
+  cp config/php/7.4/php.ini /usr/local/etc/php/7.4
 
-  # MariaDB
-  #info "Running MySQL setup..."
-  #sudo /usr/local/bin/mysql_secure_installation
 
-  # phpMyAdmin config
-  #backup file
-  #cp config/phpmyadmin/phpmyadmin.config.inc.php /usr/local/etc
+  # MariaDB (MySQL)
+  # -------------------------
+
+  info "Setting up MariaDB..."
+  mysql_install_db
+  mariadb-secure-installation
+
+
+  # phpMyAdmin
+  # -------------------------
+
+  info "Setting up phpMyAdmin..."
+
+  # Backup existing files
+  if [ -f "/usr/local/etc/phpmyadmin.config.inc.php" ]; then
+    info "Making a backup of the existing phpmyadmin.config.inc.php file..."
+    cp /usr/local/etc/phpmyadmin.config.inc.php $backup_location
+  fi
+
+  # Copy PHP config file
+  cp config/phpmyadmin/phpmyadmin.config.inc.php /usr/local/etc
+
 
   # .zshrc
+  # -------------------------
+
   if [ -f "$HOME/.zshrc" ]; then
     info "Making a backup of .zshrc..."
     cp $HOME/.zshrc $backup_location
@@ -161,7 +314,10 @@ dotfiles_installer () {
   cp .zshrc $HOME
   #source $HOME/.zshrc
 
+
   # Clean up empty backup directories
+  # -------------------------
+
   if [ ! "$(ls -A $backup_location)" ]; then
     rmdir $backup_location
   fi
@@ -175,6 +331,8 @@ dotfiles_installer () {
 
 
 # Confirm the user would like to run the installer
+# -------------------------
+
 echo
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
   run_installer=true
@@ -189,7 +347,10 @@ else
   done
 fi
 
+
 # Run the installer
+# -------------------------
+
 if $run_installer; then
   echo
   info "Running the installer..."

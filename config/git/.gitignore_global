@@ -1,2 +1,7 @@
+# System
 .DS_Store
 Thumbs.db
+
+# Editor
+.nova
+.vscode
