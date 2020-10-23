@@ -4,11 +4,18 @@ Nate Dillon’s dotfiles for macOS.
 
 ## Installation
 
-Clone this repository to the directory of your choice, and run the `install.sh` script.
+For a fresh installation of macOS, run the following commands (if you already have git installed you can skip this step).
 
 ```
-git clone git@github.com:natedillon/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
+sudo softwareupdate -i -a
+xcode-select --install
+```
+
+Clone this repository to the directory of your choice (I like to keep it in `~/Projects/natedillon/dotfiles`, with `~/dotfiles` as a symlink), then run the `install.sh` script.
+
+```
+git clone git@github.com:natedillon/dotfiles.git
+cd dotfiles
 ./install.sh
 ```
 
