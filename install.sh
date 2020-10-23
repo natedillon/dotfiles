@@ -79,8 +79,12 @@ dotfiles_installer () {
   if [ -f "$HOME/.gitconfig" ]; then
     echo
     warning "A .gitconfig file already exists"
-    gitconfig_name=$(git config user.name)
-    gitconfig_email=$(git config user.email)
+    if hash git config user.name 2>/dev/null; then
+      gitconfig_name=$(git config user.name)
+    fi
+    if hash git config user.email 2>/dev/null; then
+      gitconfig_email=$(git config user.email)
+    fi
     if [ ! -z "$gitconfig_name" ] && [ ! -z "$gitconfig_email" ]; then
       echo
       echo "Name:"
@@ -97,16 +101,12 @@ dotfiles_installer () {
           * ) warning "Please answer yes [Y/y] or no [N/n].";;
         esac
       done
-      echo "test 1"
     else
-      echo "test 2"
       run_gitconfig=true
     fi
   else
-    echo "test 3"
     run_gitconfig=true
   fi
-  echo "test 4"
 
   # Copy the .gitconfig file
   if [ -f "$HOME/.gitconfig" ]; then
