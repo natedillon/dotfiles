@@ -236,12 +236,28 @@ dotfiles_installer () {
   fi
 
 
+  # Apache
+  # -------------------------
+
+  # Backup existing files
+  info "Making a backup of the existing Apache config files..."
+  if [ -f "/etc/apache2/httpd.conf" ]; then
+    cp /etc/apache2/httpd.conf $backup_location
+  fi
+  if [ -f "/etc/apache2/extra/httpd-userdir.conf" ]; then
+    cp /etc/apache2/extra/httpd-userdir.conf $backup_location
+  fi
+  if [ -f "/etc/apache2/users/nate.conf" ]; then
+    cp /etc/apache2/httpd.conf $backup_location
+  fi
+
   # Copy Apache config files
-  #backup files
-  #cp config/apache2/httpd.conf /etc/apache2
-  #cp config/apache2/extra/httpd-userdir.conf /etc/apache2/extra
-  #cp config/apache2/users/nate.conf /etc/apache2/users
-  #sudo apachectl restart
+  cp config/apache2/httpd.conf /etc/apache2
+  cp config/apache2/extra/httpd-userdir.conf /etc/apache2/extra
+  cp config/apache2/users/nate.conf /etc/apache2/users
+
+  # Restart Apache
+  sudo apachectl restart
 
 
   # Copy PHP config file
