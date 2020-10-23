@@ -4,13 +4,38 @@ Nate Dillon’s dotfiles for macOS.
 
 ## Installation
 
-Clone this repository to the directory of your choice, and run the `install.sh` script.
+### Xcode Command Line Tools Installation
+
+For a fresh installation of macOS, run the following commands (if you already have Git installed you can skip this step).
 
 ```
-git clone git@github.com:natedillon/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
+sudo softwareupdate -i -a
+xcode-select --install
+```
+
+**Note:** The `xcode-select --install` command appears to not work at the moment, giving an error saying the software is not currently available from the Software Update server. Unfortunately, the only fix I’ve found is to download the command line tools directly from the [Apple developer website](https://developer.apple.com/download/more/?=command%20line%20tools), which requires a login.
+
+### dotfiles Installation
+
+Clone this repository to the directory of your choice (I like to keep it in `~/Projects/natedillon/dotfiles`, with `~/dotfiles` as a symlink), then run the `install.sh` script.
+
+```
+git clone git@github.com:natedillon/dotfiles.git
+cd dotfiles
 ./install.sh
 ```
+
+## Homebrew Bundle
+
+> Bundler for non-Ruby dependencies from Homebrew, Homebrew Cask, Mac App Store and Whalebrew.
+
+Bundle is used to install much of the software in the dotfiles. Currently installed software is dumped into the `Brewfile.dump` file:
+
+```
+brew bundle dump -f --file brewfiles/Brewfile.dump
+```
+
+More information can be found in the [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle) GitHub repo.
 
 ## youtube-dl
 
