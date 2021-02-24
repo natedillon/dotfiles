@@ -147,6 +147,18 @@ dotfiles_installer () {
   fi
 
 
+  # npm-check-updates
+  # -------------------------
+
+  info "Checking for npm-check-updates..."
+  if hash type ncu 2>/dev/null; then
+    info "Installing npm-check-updates..."
+    npm install -g npm-check-updates
+  else
+    success "npm-check-updates is installed"
+  fi
+
+
   # Grunt
   # -------------------------
 
