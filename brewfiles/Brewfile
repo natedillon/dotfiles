@@ -17,4 +17,4 @@ brew "starship"
 brew "zsh-syntax-highlighting"
 
 # Misc.
-#brew "youtube-dl" # Disabling temporarily due to DMCA takedown
+brew "youtube-dl"
