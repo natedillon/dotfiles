@@ -15,8 +15,11 @@ yellow "=========================================="
 # -------------------------
 
 dotfiles_installer () {
+
+  source ./install/xcode.sh
+
   echo
-  success "Installation complete"
+  success "dotfiles installation complete!"
 }
 
 
