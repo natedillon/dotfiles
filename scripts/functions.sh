@@ -2,25 +2,25 @@
 
 blue () {
   tput setaf 4
-  echo "$*"
+  printf "$*\n"
   tput sgr0
 }
 
 green () {
   tput setaf 2
-  echo "$*"
+  printf "$*\n"
   tput sgr0
 }
 
 yellow () {
   tput setaf 3
-  echo "$*"
+  printf "$*\n"
   tput sgr0
 }
 
 red () {
   tput setaf 1
-  echo "$*"
+  printf "$*\n"
   tput sgr0
 }
 
