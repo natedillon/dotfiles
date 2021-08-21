@@ -15,7 +15,7 @@ sudo softwareupdate -i -a
 xcode-select --install
 ```
 
-**Note:** The `xcode-select --install` command appears to not work at the moment, giving an error saying the software is not currently available from the Software Update server. Unfortunately, the only fix I’ve found is to download the command line tools directly from the [Apple developer website](https://developer.apple.com/download/more/?=command%20line%20tools), which requires a login.
+**Note:** You can also download the command line tools directly from the [Apple developer website](https://developer.apple.com/download/more/?=command%20line%20tools), which requires an Apple account.
 
 #### Apple Account
 
