@@ -1,4 +1,8 @@
+# Taps
 tap "homebrew/services"
+tap "homebrew/cask"
+tap "homebrew/cask-versions"
+tap "homebrew/cask-drivers"
 
 # Git
 brew "git"
@@ -8,13 +12,8 @@ brew "git-lfs"
 brew "php"
 brew "composer"
 brew "mariadb", restart_service: true
-brew "phpmyadmin"
 brew "node"
-brew "python"
 
 # Command line configuration
 brew "starship"
 brew "zsh-syntax-highlighting"
-
-# Misc.
-brew "youtube-dl"
