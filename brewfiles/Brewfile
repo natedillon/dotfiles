@@ -3,6 +3,7 @@ tap "homebrew/services"
 tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/cask-drivers"
+tap "homebrew/cask-fonts"
 
 # Git
 brew "git"
@@ -17,6 +18,7 @@ brew "node"
 # Command line configuration
 brew "starship"
 brew "zsh-syntax-highlighting"
+cask "font-fira-code-nerd-font"
 
 # Casks
 cask "1password"
@@ -31,6 +33,7 @@ cask "firefox-developer-edition"
 cask "fliqlo"
 cask "google-chrome"
 cask "imageoptim"
+cask "iterm2"
 cask "itsycal"
 cask "logitech-control-center"
 #cask "microsoft-auto-update"
