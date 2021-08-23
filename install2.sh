@@ -21,6 +21,8 @@ dotfiles_installer () {
   source ./install/xcode.sh
   source ./install/oh-my-zsh.sh
   source ./install/homebrew.sh
+  source ./install/homebrew-packages.sh
+  # npm-check-updates
 
   # SSH keys
   # Apache
