@@ -20,6 +20,7 @@ dotfiles_installer () {
 
   source ./install/xcode.sh
   source ./install/oh-my-zsh.sh
+  source ./install/homebrew.sh
 
   # SSH keys
   # Apache
