@@ -16,10 +16,21 @@ yellow "=========================================="
 
 dotfiles_installer () {
 
+  # Create backups
+
   source ./install/xcode.sh
+  source ./install/oh-my-zsh.sh
+
+  # SSH keys
+  # Apache
+  # PHP
+  # MariaDB (MySQL)
+  # Zsh
+
+  # Clean up empty backups
 
   echo
-  success "dotfiles installation complete!"
+  success "dotfiles installation complete! 🎉"
 }
 
 
