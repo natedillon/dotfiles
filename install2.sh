@@ -22,9 +22,11 @@ dotfiles_installer () {
   source ./install/oh-my-zsh.sh
   source ./install/homebrew.sh
   source ./install/homebrew-packages.sh
+  # nvm
   # npm-check-updates
 
-  # SSH keys
+  source ./setup/ssh.sh
+
   # Apache
   # PHP
   # MariaDB (MySQL)
