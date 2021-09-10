@@ -1,6 +1,13 @@
 # SSH keys
 # -------------------------
 
+cd "$(dirname "$0")"
+cd ../functions
+source ./colors.sh
+source ./alerts.sh
+source ./get-email.sh
+cd - > /dev/null
+
 info "Checking for SSH keys..."
 private_key=$HOME/.ssh/id_rsa
 public_key=$HOME/.ssh/id_rsa.pub

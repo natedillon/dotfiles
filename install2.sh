@@ -2,7 +2,8 @@
 
 set -eo pipefail
 
-source scripts/functions.sh
+source functions/colors.sh
+source functions/alerts.sh
 
 echo
 yellow "=========================================="
@@ -18,14 +19,18 @@ dotfiles_installer () {
 
   # Create backups
 
-  source ./install/xcode.sh
-  source ./install/oh-my-zsh.sh
-  source ./install/homebrew.sh
-  source ./install/homebrew-packages.sh
+  cd ./install
+  source ./xcode.sh
+  source ./oh-my-zsh.sh
+  source ./homebrew.sh
+  source ./homebrew-packages.sh
   # nvm
   # npm-check-updates
+  cd - > /dev/null
 
-  source ./setup/ssh.sh
+  cd ./setup
+  source ./ssh.sh
+  cd - > /dev/null
 
   # Apache
   # PHP
