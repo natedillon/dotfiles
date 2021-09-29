@@ -7,4 +7,4 @@ mas "SonicWall Mobile Connect", id: 822514576
 
 # Development tools
 brew "direnv"
-cask "docker"
+cask "docker" # homebrew/cask/docker
