@@ -17,8 +17,9 @@ yellow "=========================================="
 
 dotfiles_installer () {
 
-  # Create backups
+  # Create backup directory
 
+  # Install software
   cd ./install
   source ./xcode.sh
   source ./oh-my-zsh.sh
@@ -28,16 +29,18 @@ dotfiles_installer () {
   # npm-check-updates
   cd - > /dev/null
 
+  # Configure software
   cd ./setup
   source ./ssh.sh
-  cd - > /dev/null
-
+  # Git
   # Apache
   # PHP
   # MariaDB (MySQL)
+  # macOS + Mac apps
   # Zsh
+  cd - > /dev/null
 
-  # Clean up empty backups
+  # Clean up empty backup directories
 
   echo
   success "dotfiles installation complete! 🎉"
