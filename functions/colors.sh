@@ -1,3 +1,7 @@
+#
+# Color functions
+#
+
 blue () {
   tput setaf 4
   printf "$*\n"
