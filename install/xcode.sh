@@ -1,5 +1,11 @@
+#
 # Xcode Command Line Developer Tools
-# -------------------------
+#
+
+cd "$(dirname "$0")"
+cd ../functions
+source ./alerts.sh
+cd - > /dev/null
 
 name="Xcode Command Line Developer Tools"
 

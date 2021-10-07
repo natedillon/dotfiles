@@ -2,8 +2,10 @@
 
 set -eo pipefail
 
-source functions/colors.sh
-source functions/alerts.sh
+cd "$(dirname "$0")"
+cd ./functions
+source ./alerts.sh
+cd - > /dev/null
 
 echo
 yellow "=========================================="
@@ -30,15 +32,15 @@ dotfiles_installer () {
   cd - > /dev/null
 
   # Configure software
-  cd ./setup
-  source ./ssh.sh
+  #cd ./setup
+  #source ./ssh.sh
   # Git
   # Apache
   # PHP
   # MariaDB (MySQL)
   # macOS + Mac apps
   # Zsh
-  cd - > /dev/null
+  #cd - > /dev/null
 
   # Clean up empty backup directories
 
