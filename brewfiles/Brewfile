@@ -13,7 +13,6 @@ brew "git-lfs"
 brew "php"
 brew "composer"
 brew "mariadb", restart_service: true
-brew "node"
 
 # Command line configuration
 brew "starship"
