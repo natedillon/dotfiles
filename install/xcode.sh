@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #
 # Xcode Command Line Developer Tools
 #
