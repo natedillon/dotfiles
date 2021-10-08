@@ -27,7 +27,7 @@ dotfiles_installer () {
   source ./oh-my-zsh.sh
   source ./homebrew.sh
   source ./homebrew-packages.sh
-  # nvm
+  source ./nvm.sh
   # npm-check-updates
   cd - > /dev/null
 
