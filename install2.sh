@@ -28,7 +28,6 @@ dotfiles_installer () {
   source ./homebrew.sh
   source ./homebrew-packages.sh
   source ./nvm.sh
-  # npm-check-updates
   source ./node.sh
   cd - > /dev/null
 
