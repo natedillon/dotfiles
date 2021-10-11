@@ -34,8 +34,8 @@ dotfiles_installer () {
   cd $installer_directory > /dev/null
 
   # Configure software
-  #source ./ssh.sh
   cd ./setup
+  source ./ssh.sh
   # Git
   # Apache
   # PHP

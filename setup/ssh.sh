@@ -1,11 +1,11 @@
 #!/bin/bash
 
+#
 # SSH keys
-# -------------------------
+#
 
 cd "$(dirname "$0")"
 cd ../functions
-source ./colors.sh
 source ./alerts.sh
 source ./get-email.sh
 cd - > /dev/null
@@ -35,15 +35,16 @@ elif $private_key_exists || $public_key_exists; then
 else
   generate_keys=true
 fi
+
 if $generate_keys; then
-  if $private_key_exists; then
-    info "Making a backup of private SSH key..."
+  #if $private_key_exists; then
+    #info "Making a backup of private SSH key..."
     #cp $private_key $backup_location
-  fi
-  if $public_key_exists; then
-    info "Making a backup of public SSH key..."
+  #fi
+  #if $public_key_exists; then
+    #info "Making a backup of public SSH key..."
     #cp $public_key $backup_location
-  fi
+  #fi
   info "Generating new SSH keys..."
   get_email
   ssh-keygen -t rsa -b 4096 -C $email
