@@ -19,6 +19,8 @@ yellow "=========================================="
 
 dotfiles_installer () {
 
+  installer_directory=$PWD
+
   # Create backup directory
 
   # Install software
@@ -29,18 +31,18 @@ dotfiles_installer () {
   source ./homebrew-packages.sh
   source ./nvm.sh
   source ./node.sh
-  cd - > /dev/null
+  cd $installer_directory > /dev/null
 
   # Configure software
-  #cd ./setup
   #source ./ssh.sh
+  cd ./setup
   # Git
   # Apache
   # PHP
   # MariaDB (MySQL)
   # macOS + Mac apps
   # Zsh
-  #cd - > /dev/null
+  cd $installer_directory > /dev/null
 
   # Clean up empty backup directories
 
