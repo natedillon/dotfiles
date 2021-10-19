@@ -35,13 +35,12 @@ dotfiles_installer () {
 
   # Configure software
   cd ./setup
-  source ./ssh.sh
-  # Git
-  # Apache
-  # PHP
-  # MariaDB (MySQL)
-  # macOS + Mac apps
-  # Zsh
+  #source ./ssh.sh
+  #source ./git.sh
+  #source ./apache.sh
+  #source ./php.sh
+  #source ./mariadb.sh
+  source ./zsh.sh
   cd $installer_directory > /dev/null
 
   # Clean up empty backup directories
