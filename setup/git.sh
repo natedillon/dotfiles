@@ -1,8 +1,11 @@
 #!/bin/bash
 
+#
+# Git
+#
+
 cd "$(dirname "$0")"
 cd ../functions
-source ./colors.sh
 source ./alerts.sh
 cd - > /dev/null
 
