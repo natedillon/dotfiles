@@ -21,7 +21,7 @@ dotfiles_installer () {
 
   installer_directory=$PWD
 
-  # Create backup directory
+  #source ./scripts/pre-install.sh
 
   # Install software
   cd ./install
@@ -43,7 +43,7 @@ dotfiles_installer () {
   source ./zsh.sh
   cd $installer_directory > /dev/null
 
-  # Clean up empty backup directories
+  #source ./scripts/post-install.sh
 
   echo
   success "dotfiles installation complete! 🎉"
