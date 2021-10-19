@@ -1,11 +1,8 @@
-# Skip verification of insecure directories
-ZSH_DISABLE_COMPFIX=true
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/nate/.oh-my-zsh"
+export ZSH="/Users/nated/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -15,7 +12,7 @@ ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
@@ -36,7 +33,7 @@ ZSH_THEME="robbyrussell"
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
+# DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -48,6 +45,8 @@ ZSH_THEME="robbyrussell"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
+# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -67,8 +66,8 @@ ZSH_THEME="robbyrussell"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
@@ -104,25 +103,11 @@ source $ZSH/oh-my-zsh.sh
 # Starship prompt
 eval "$(starship init zsh)"
 
-# zsh-syntax-highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 # Project path
 if [ ! -d "$HOME/Projects" ]; then
   mkdir "$HOME/Projects"
 fi
 export PROJECT_PATH="$HOME/Projects"
-
-# Chef
-if [ -d "/opt/chefdk/bin" ]; then
-  export PATH=/opt/chefdk/bin:$PATH
-fi
-
-# Java
-if [ -d "/usr/libexec/java_home" ]; then
-  export JAVA_HOME=$(/usr/libexec/java_home)
-fi
-export CLUSTER_STANDALONE=true
 
 # c
 alias c="clear"
@@ -131,9 +116,9 @@ alias c="clear"
 alias edit="atom"
 
 # Apache
-alias start-apache='sudo apachectl start'
-alias stop-apache='sudo apachectl stop'
-alias restart-apache='sudo apachectl restart'
+alias apache-start='sudo apachectl start'
+alias apache-stop='sudo apachectl stop'
+alias apache-restart='sudo apachectl restart'
 
 # Config files
 alias config-apache="sudo atom /etc/apache2/httpd.conf"
@@ -142,6 +127,21 @@ alias config-hosts="sudo atom /etc/hosts"
 alias config-vhosts="sudo atom /private/etc/apache2/extra/httpd-vhosts.conf"
 alias config-php="sudo atom /etc/php.ini"
 
-# Start/stop GlobalProtect VPN
-alias start-vpn="launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*"
-alias stop-vpn="launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*"
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# direnv
+eval "$(direnv hook zsh)"
+
+# Node Version Manager (nvm)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Docker
+export DOCKER_DEFAULT_PLATFORM=linux/amd64
+
+# SDKMAN!
+# THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
