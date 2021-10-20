@@ -1,4 +1,9 @@
+# Taps
 tap "homebrew/services"
+tap "homebrew/cask"
+tap "homebrew/cask-versions"
+tap "homebrew/cask-drivers"
+tap "homebrew/cask-fonts"
 
 # Git
 brew "git"
@@ -8,13 +13,33 @@ brew "git-lfs"
 brew "php"
 brew "composer"
 brew "mariadb", restart_service: true
-brew "phpmyadmin"
-brew "node"
-brew "python"
 
 # Command line configuration
 brew "starship"
 brew "zsh-syntax-highlighting"
+cask "font-fira-code-nerd-font"
 
-# Misc.
-brew "youtube-dl"
+# Casks
+cask "1password"
+cask "alfred"
+cask "atom"
+cask "bartender"
+cask "brave-browser"
+cask "choosy"
+cask "dropbox"
+#cask "firefox"
+cask "firefox-developer-edition"
+cask "fliqlo"
+cask "google-chrome"
+cask "imageoptim"
+cask "iterm2"
+cask "itsycal"
+cask "logitech-options"
+cask "microsoft-teams"
+cask "nova"
+cask "quitter"
+cask "scroll-reverser"
+#cask "thingsmacsandboxhelper"
+cask "tower"
+cask "transmit"
+

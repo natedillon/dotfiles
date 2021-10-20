@@ -2,13 +2,19 @@
 
 Nate Dillon’s dotfiles for macOS.
 
-## Installation
+## Prerequisites
 
-### Prerequisites
+### Apple Account
 
-#### Xcode Command Line Tools Installation
+You will need to sign in to your Apple account before running the installer to prevent the Mac App Store software installation from failing.
 
-For a fresh installation of macOS, run the following commands (if you already have Git installed you can skip this step).
+**Note:** Each app installed with `mas` in the `Brewfile` needs to be purchased with the Apple account prior to running the dotfiles installation.
+
+### Git
+
+Git will need to be installed in order to clone the repository and run the installer (alternatively, you could choose to download the code from GitHub). Installing the Xcode Command Line Tools is the best way to install Git on a new Mac.
+
+To install the Xcode Command Line Tools, run the following commands:
 
 ```
 sudo softwareupdate -i -a
@@ -17,11 +23,7 @@ xcode-select --install
 
 **Note:** You can also download the command line tools directly from the [Apple developer website](https://developer.apple.com/download/more/?=command%20line%20tools), which requires an Apple account.
 
-#### Apple Account
-
-You will need to sign in to your Apple account before running the installer to prevent the App Store software installation from failing.
-
-### dotfiles Installation
+## Installation
 
 Clone this repository to the directory of your choice (I like to keep it in `~/Projects/natedillon/dotfiles`, with `~/dotfiles` as a symlink), then run the `install.sh` script.
 
