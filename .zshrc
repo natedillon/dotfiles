@@ -100,9 +100,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Starship prompt
-eval "$(starship init zsh)"
-
 # Project path
 if [ ! -d "$HOME/Projects" ]; then
   mkdir "$HOME/Projects"
@@ -129,6 +126,9 @@ alias config-php="sudo atom /etc/php.ini"
 
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Starship prompt
+eval "$(starship init zsh)"
 
 # direnv
 eval "$(direnv hook zsh)"
