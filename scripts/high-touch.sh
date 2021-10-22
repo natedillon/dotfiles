@@ -17,7 +17,7 @@ brew bundle --verbose --no-lock --file="./brewfiles/High-Touch.Brewfile"
 # SDKMAN!
 echo
 info "Checking for SDKMAN!..."
-if command -v sdk &> /dev/null; then
+if [ -d "$HOME/.sdkman" ]; then
   info "Already installed"
 else
   info "Installing..."
