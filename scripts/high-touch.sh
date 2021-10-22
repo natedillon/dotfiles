@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 #
 # High Touch
@@ -39,3 +39,9 @@ else
   info "Installing..."
   sdk install java 11.0.12-librca
 fi
+
+# Zsh settings
+echo
+info "Adding .hightouch to home directory..."
+cp ../.hightouch $HOME
+source $HOME/.zshrc
