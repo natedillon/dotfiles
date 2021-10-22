@@ -31,4 +31,11 @@ info "Adding SDKMAN! config file..."
 cp ../config/sdkman/etc/config $HOME/.sdkman/etc
 
 # Java
-#sdk install java 11.0.12-librca
+echo
+info "Checking for Java..."
+if command -v java &> /dev/null; then
+  info "Already installed"
+else
+  info "Installing..."
+  sdk install java 11.0.12-librca
+fi
