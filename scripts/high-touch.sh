@@ -15,7 +15,14 @@ info "Installing Homebrew packages..."
 brew bundle --verbose --no-lock --file="./brewfiles/High-Touch.Brewfile"
 
 # SDKMAN!
-#curl -s "https://get.sdkman.io" | bash
+echo
+info "Checking for SDKMAN!..."
+if command -v sdk &> /dev/null; then
+  info "Already installed"
+else
+  info "Installing..."
+  curl -s "https://get.sdkman.io" | bash
+fi
 
 # SDKMAN! config for M1
 
