@@ -130,18 +130,12 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Starship prompt
 eval "$(starship init zsh)"
 
-# direnv
-eval "$(direnv hook zsh)"
-
 # Node Version Manager (nvm)
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Docker
-export DOCKER_DEFAULT_PLATFORM=linux/amd64
-
-# SDKMAN!
-# THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+# High Touch settings
+if [ -f "$HOME/.hightouch" ]; then
+  source $HOME/.hightouch
+fi

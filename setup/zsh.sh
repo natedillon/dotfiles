@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 #
 # Zsh
@@ -14,6 +14,7 @@ cd - > /dev/null
 #  cp $HOME/.zshrc $backup_location
 #fi
 
+echo
 info "Adding .zshrc to home directory..."
 cp ../.zshrc $HOME
-#source $HOME/.zshrc
+source $HOME/.zshrc

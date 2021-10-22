@@ -11,7 +11,7 @@ cd - > /dev/null
 
 name="Homebrew packages"
 
-# Check for Homebrew
+# TODO: Check for Homebrew
 
 echo
 info "Installing $name..."
