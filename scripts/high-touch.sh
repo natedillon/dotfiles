@@ -12,7 +12,7 @@ cd - > /dev/null
 # Homebrew packages
 echo
 info "Installing Homebrew packages..."
-brew bundle --verbose --no-lock --file="./brewfiles/High-Touch.Brewfile"
+brew bundle --verbose --no-lock --file="../brewfiles/High-Touch.Brewfile"
 
 # SDKMAN!
 echo
