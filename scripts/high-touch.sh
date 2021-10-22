@@ -25,6 +25,10 @@ else
 fi
 
 # SDKMAN! config for M1
+# TODO: Backup existing config file
+echo
+info "Adding SDKMAN! config file..."
+cp ../config/sdkman/etc/config $HOME/.sdkman/etc
 
 # Java
 #sdk install java 11.0.12-librca
