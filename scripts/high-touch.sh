@@ -1,13 +1,18 @@
+#!/bin/bash
+
+#
 # High Touch
-# -------------------------
+#
+
+cd "$(dirname "$0")"
+cd ../functions
+source ./alerts.sh
+cd - > /dev/null
 
 # Homebrew packages
+echo
+info "Installing Homebrew packages..."
 brew bundle --verbose --no-lock --file="./brewfiles/High-Touch.Brewfile"
-
-# SSH key
-#ssh-keygen -t rsa -b 4096
-
-# SSH config
 
 # SDKMAN!
 #curl -s "https://get.sdkman.io" | bash
