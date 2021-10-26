@@ -41,6 +41,7 @@ dotfiles_installer () {
   #source ./php.sh
   #source ./mariadb.sh
   source ./zsh.sh
+  source ./editorconfig.sh
   cd $installer_directory > /dev/null
 
   #source ./scripts/post-install.sh
