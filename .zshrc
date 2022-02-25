@@ -119,15 +119,15 @@ alias c="clear"
 alias edit="atom"
 
 # Apache
-alias apache-start='sudo apachectl start'
-alias apache-stop='sudo apachectl stop'
-alias apache-restart='sudo apachectl restart'
+alias apache-start='brew services start httpd'
+alias apache-stop='brew services stop httpd'
+alias apache-restart='brew services restart httpd'
 
 # Config files
-alias config-apache="sudo atom /etc/apache2/httpd.conf"
+alias config-apache="sudo atom /opt/homebrew/etc/httpd/httpd.conf"
 alias config-apache-users="sudo atom /etc/apache2/users/"
 alias config-hosts="sudo atom /etc/hosts"
-alias config-vhosts="sudo atom /private/etc/apache2/extra/httpd-vhosts.conf"
+alias config-vhosts="sudo atom /opt/homebrew/etc/httpd/extra/httpd-vhosts.conf"
 alias config-php="sudo atom /etc/php.ini"
 
 # Homebrew
