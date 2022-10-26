@@ -31,6 +31,7 @@ dotfiles_installer () {
   source ./homebrew-packages.sh
   source ./nvm.sh
   source ./node.sh
+  source ./npm-packages.sh
   cd $installer_directory > /dev/null
 
   # Configure software
