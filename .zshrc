@@ -116,7 +116,7 @@ export PROJECT_PATH="$HOME/Projects"
 alias c="clear"
 
 # edit
-alias edit="atom"
+alias edit="subl"
 
 # Apache
 alias apache-start='brew services start httpd'

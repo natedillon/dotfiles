@@ -1,16 +1,18 @@
 # Taps
-tap "homebrew/services"
 tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
+tap "homebrew/services"
 
 # Git
 brew "git"
 brew "git-lfs"
 
 # Local development
-brew "php"
+brew "httpd", restart_service: true
+brew "php", link: false
+brew "php@7.4", restart_service: true, link: true
 brew "composer"
 brew "mariadb", restart_service: true
 
@@ -19,28 +21,50 @@ brew "starship"
 brew "zsh-syntax-highlighting"
 cask "font-fira-code-nerd-font"
 
+# Command line tools
+brew "youtube-dl"
+
 # Casks
 cask "1password"
 cask "alfred"
-cask "atom"
+cask "appzapper"
 cask "bartender"
 cask "brave-browser"
 cask "choosy"
 cask "dropbox"
 cask "fig"
-#cask "firefox"
+cask "figma"
 cask "firefox-developer-edition"
 cask "fliqlo"
 cask "google-chrome"
+cask "hand-mirror"
 cask "imageoptim"
+cask "insomnia"
 cask "iterm2"
 cask "itsycal"
-cask "logitech-options"
-cask "microsoft-teams"
+cask "logi-options-plus"
+cask "notion"
 cask "nova"
+cask "private-internet-access"
 cask "quitter"
-cask "scroll-reverser"
-#cask "thingsmacsandboxhelper"
+cask "sublime-text"
+cask "tableplus"
+cask "thingsmacsandboxhelper"
 cask "tower"
 cask "transmit"
+cask "visual-studio-code"
+cask "vlc"
 
+# Mac App Store
+brew "mas"
+mas "Amphetamine", id: 937984704
+mas "Day One", id: 1055511498
+mas "Divvy", id: 413857545
+mas "Ghostery Lite", id: 1436953057
+mas "Grammarly for Safari", id: 1462114288
+mas "iA Writer", id: 775737590
+mas "Microsoft Remote Desktop", id: 1295203466
+mas "Pocket", id: 568494494
+mas "Save to Pocket", id: 1477385213
+mas "Soulver 2", id: 413965349
+mas "Things", id: 904280696
