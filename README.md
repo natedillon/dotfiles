@@ -39,10 +39,10 @@ cd dotfiles
 
 > Bundler for non-Ruby dependencies from Homebrew, Homebrew Cask, Mac App Store and Whalebrew.
 
-Bundle is used to install much of the software in the dotfiles. Currently installed software is dumped into the `Brewfile.dump` file:
+Bundle is used to install much of the software in the dotfiles. Currently installed software is dumped into the `_Backup.Brewfile` file:
 
 ```
-brew bundle dump -f --file brewfiles/Brewfile.dump
+brew bundle dump -f --file homebrew/_Backup.Brewfile
 ```
 
 More information can be found in the [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle) GitHub repo.
@@ -74,6 +74,5 @@ For 4K video, you need to add `--prefer-avconv`:
 ```
 youtube-dl [URL] --prefer-avconv
 ```
-
 
 More information can be found on the [youtube-dl](https://ytdl-org.github.io/youtube-dl/) website.
