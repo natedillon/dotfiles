@@ -1,9 +1,9 @@
 # Taps
-tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/services"
+tap "shivammathur/php"
 
 # Git
 brew "git"
@@ -11,8 +11,9 @@ brew "git-lfs"
 
 # Local development
 brew "httpd", restart_service: true
-brew "php", link: false
-brew "php@7.4", restart_service: true, link: true
+brew "shivammathur/php/php@7.4", link: false
+brew "shivammathur/php/php@8.1", link: false
+brew "php", restart_service: true, link: true
 brew "composer"
 brew "mariadb", restart_service: true
 
@@ -28,6 +29,7 @@ brew "youtube-dl"
 cask "1password"
 cask "alfred"
 cask "appzapper"
+cask "arc"
 cask "bartender"
 cask "brave-browser"
 cask "choosy"
@@ -37,6 +39,7 @@ cask "figma"
 cask "firefox-developer-edition"
 cask "fliqlo"
 cask "google-chrome"
+cask "google-chrome-canary"
 cask "hand-mirror"
 cask "imageoptim"
 cask "insomnia"
@@ -57,14 +60,17 @@ cask "vlc"
 
 # Mac App Store
 brew "mas"
+mas "1Password for Safari", id: 1569813296
 mas "Amphetamine", id: 937984704
+mas "Contrast", id: 1254981365
 mas "Day One", id: 1055511498
 mas "Divvy", id: 413857545
-mas "Ghostery Lite", id: 1436953057
-mas "Grammarly for Safari", id: 1462114288
+mas "Ghostery – Privacy Ad Blocker", id: 1436953057
+mas "Hand Mirror", id: 1502839586
 mas "iA Writer", id: 775737590
 mas "Microsoft Remote Desktop", id: 1295203466
-mas "Pocket", id: 568494494
+mas "Notion Web Clipper", id: 1559269364
+mas "Reeder", id: 1529448980
 mas "Save to Pocket", id: 1477385213
 mas "Soulver 2", id: 413965349
 mas "Things", id: 904280696

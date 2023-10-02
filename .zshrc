@@ -124,11 +124,11 @@ alias apache-stop='brew services stop httpd'
 alias apache-restart='brew services restart httpd'
 
 # Config files
-alias config-apache="sudo atom /opt/homebrew/etc/httpd/httpd.conf"
-alias config-apache-users="sudo atom /etc/apache2/users/"
-alias config-hosts="sudo atom /etc/hosts"
-alias config-vhosts="sudo atom /opt/homebrew/etc/httpd/extra/httpd-vhosts.conf"
-alias config-php="sudo atom /etc/php.ini"
+alias config-apache="sudo subl /opt/homebrew/etc/httpd/httpd.conf"
+alias config-apache-users="sudo subl /etc/apache2/users/"
+alias config-hosts="sudo subl /etc/hosts"
+alias config-vhosts="sudo subl /opt/homebrew/etc/httpd/extra/httpd-vhosts.conf"
+alias config-php="sudo subl /etc/php.ini"
 
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
