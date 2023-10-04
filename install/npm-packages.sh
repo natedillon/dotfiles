@@ -15,10 +15,5 @@ name="npm packages"
 
 echo
 info "Installing $name..."
-npm install -g npm-check-updates typescript
-
-# TODO: Packages required for High Touch
-# corepack
-# yarn
-# volar
-# vls
+npm install --global npm-check-updates
+npm install --global typescript
