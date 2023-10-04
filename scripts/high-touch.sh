@@ -14,6 +14,16 @@ echo
 info "Installing Homebrew packages..."
 brew bundle --verbose --no-lock --file="../homebrew/High-Touch.Brewfile"
 
+# npm packages
+echo
+info "Installing npm packages..."
+# Yarn
+npm install --global yarn
+# Vue: Volar
+npm install --global @volar/vue-language-server
+# Vue: Vetur
+npm install --global vls@0.7.4
+
 # SDKMAN!
 echo
 info "Checking for SDKMAN!..."
