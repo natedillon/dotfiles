@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# Pre-install
+# Backup / Setup
 #
 
 # Create a backup directory with the current date and time

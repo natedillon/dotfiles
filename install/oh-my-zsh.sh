@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# Oh My Zsh
+# Install / Oh My Zsh
 #
 
 cd "$(dirname "$0")"

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# Homebrew
+# Install / Homebrew
 #
 
 cd "$(dirname "$0")"

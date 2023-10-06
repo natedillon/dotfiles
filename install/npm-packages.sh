@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# npm packages
+# Install / npm packages
 #
 
 cd "$(dirname "$0")"
@@ -10,8 +10,6 @@ source ./alerts.sh
 cd - > /dev/null
 
 name="npm packages"
-
-# TODO: Check for Node and/or npm
 
 echo
 info "Installing $name..."

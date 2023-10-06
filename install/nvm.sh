@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# Node Version Manager
+# Install / Node Version Manager
 #
 
 cd "$(dirname "$0")"

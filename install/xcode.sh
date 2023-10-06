@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# Xcode Command Line Developer Tools
+# Install / Xcode Command Line Developer Tools
 #
 
 cd "$(dirname "$0")"

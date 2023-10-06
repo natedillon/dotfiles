@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# Homebrew packages
+# Install / Homebrew packages
 #
 
 cd "$(dirname "$0")"
@@ -10,8 +10,6 @@ source ./alerts.sh
 cd - > /dev/null
 
 name="Homebrew packages"
-
-# TODO: Check for Homebrew
 
 echo
 info "Installing $name..."
