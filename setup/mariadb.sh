@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# MariaDB
+# Setup / MariaDB
 #
 
 cd "$(dirname "$0")"

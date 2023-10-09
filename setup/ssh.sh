@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# SSH keys
+# Setup / SSH
 #
 
 cd "$(dirname "$0")"
@@ -37,14 +37,6 @@ else
 fi
 
 if $generate_keys; then
-  #if $private_key_exists; then
-    #info "Making a backup of private SSH key..."
-    #cp $private_key $backup_location
-  #fi
-  #if $public_key_exists; then
-    #info "Making a backup of public SSH key..."
-    #cp $public_key $backup_location
-  #fi
   info "Generating new SSH keys..."
   get_email
   ssh-keygen -t rsa -b 4096 -C $email

@@ -21,8 +21,6 @@ dotfiles_installer () {
 
   installer_directory=$PWD
 
-  #source ./scripts/pre-install.sh
-
   # Install software
   cd ./install
   source ./xcode.sh
@@ -44,8 +42,6 @@ dotfiles_installer () {
   source ./zsh.sh
   source ./editorconfig.sh
   cd $installer_directory > /dev/null
-
-  #source ./scripts/post-install.sh
 
   echo
   success "dotfiles installation complete! 🎉"

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# Post-install
+# Backup / Cleanup
 #
 
 # Clean up empty backup directories

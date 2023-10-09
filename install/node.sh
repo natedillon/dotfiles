@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# Node
+# Install / Node
 #
 
 cd "$(dirname "$0")"
