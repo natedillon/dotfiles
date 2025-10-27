@@ -1,6 +1,4 @@
 # Taps
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
 tap "homebrew/services"
 tap "shivammathur/php"
 
@@ -22,18 +20,15 @@ brew "zsh-syntax-highlighting"
 cask "font-fira-code-nerd-font"
 
 # Command line tools
-brew "youtube-dl"
+brew "yt-dlp"
 
 # Casks
 cask "1password"
 cask "alfred"
+cask "amazon-q"
 cask "appzapper"
 cask "arc"
-cask "bartender"
-cask "brave-browser"
-cask "choosy"
 cask "dropbox"
-cask "fig"
 cask "figma"
 cask "firefox-developer-edition"
 cask "fliqlo"
@@ -44,11 +39,13 @@ cask "imageoptim"
 cask "insomnia"
 cask "iterm2"
 cask "itsycal"
+cask "jordanbaird-ice"
 cask "logi-options-plus"
 cask "notion"
 cask "nova"
 cask "private-internet-access"
 cask "quitter"
+cask "raindropio"
 cask "sublime-text"
 cask "tableplus"
 cask "thingsmacsandboxhelper"
@@ -63,13 +60,15 @@ mas "1Password for Safari", id: 1569813296
 mas "Amphetamine", id: 937984704
 mas "Contrast", id: 1254981365
 mas "Day One", id: 1055511498
-mas "Divvy", id: 413857545
-mas "Ghostery – Privacy Ad Blocker", id: 1436953057
 mas "Hand Mirror", id: 1502839586
 mas "iA Writer", id: 775737590
 mas "Microsoft Remote Desktop", id: 1295203466
+mas "NiceCopy", id: 6737711441
 mas "Notion Web Clipper", id: 1559269364
 mas "Reeder", id: 1529448980
-mas "Save to Pocket", id: 1477385213
+mas "Save to Raindrop.io", id: 1549370672
 mas "Soulver 2", id: 413965349
 mas "Things", id: 904280696
+mas "Tot", id: 1491071483
+mas "uBlock Origin Lite", id: 6745342698
+mas "URL Linker", id: 1289119450

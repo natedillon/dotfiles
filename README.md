@@ -6,7 +6,7 @@ Nate Dillon’s dotfiles for macOS.
 
 ### Apple Account
 
-You will need to sign in to your Apple account before running the installer to prevent the Mac App Store software installation from failing.
+Sign in to your Apple account before running the installer to prevent the Mac App Store software installation from failing.
 
 **Note:** Each app installed with `mas` in the `Brewfile` needs to be purchased with the Apple account prior to running the dotfiles installation.
 
@@ -47,32 +47,32 @@ brew bundle dump -f --file homebrew/_Backup.Brewfile
 
 More information can be found in the [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle) GitHub repo.
 
-### youtube-dl
+### yt-dlp
 
-> youtube-dl is a command-line program to download videos from YouTube.com and a few more sites.
+> A feature-rich command-line audio/video downloader.
 
 Basic usage:
 
 ```
-youtube-dl [URL]
+yt-dlp [URL]
 ```
 
 If default command doesn’t work for 1080p, make sure [ffmpeg](https://ffmpeg.org/) is installed and run this command:
 
 ```
-youtube-dl -f 'bestvideo+bestaudio/best' [URL]
+yt-dlp -f 'bestvideo+bestaudio/best' [URL]
 ```
 
 Get an mp4 container and AAC audio with this command:
 
 ```
-youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best' [URL]
+yt-dlp -f 'bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4] / bv*+ba/b' [URL]
 ```
 
-For 4K video, you need to add `--prefer-avconv`:
+For 4K video, you need to add `--prefer-avconv` (yt-dlp says this is no longer supported and may not work as intended):
 
 ```
-youtube-dl [URL] --prefer-avconv
+yt-dlp [URL] --prefer-avconv
 ```
 
-More information can be found on the [youtube-dl](https://ytdl-org.github.io/youtube-dl/) website.
+More information can be found in the [yt-dlp](https://github.com/yt-dlp/yt-dlp) repository.
